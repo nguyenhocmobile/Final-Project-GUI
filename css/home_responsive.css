@@ -9,6 +9,7 @@
     header {
         height: var(--primary-height-header);
     }
+   
     .contain-header,
     .content-sale,
     .navigation-bar,
@@ -112,7 +113,7 @@
     }
     .navigation-bar ul li:nth-last-child(2) a,
     .navigation-bar ul li:nth-last-child(3) a {
-        display: none;
+        display: block;
     }
     .more-nav {
         display: block;
@@ -430,6 +431,7 @@
         width: 90%;
         height: 200px;
     }
+    
 }
 
 @media only screen and (min-width: 410px) and (max-width: 510px) {
@@ -961,3 +963,24 @@
         width: 100%;
     }
 }
+
+
+
+@media only screen and (max-width: 510px){
+.fa-ellipsis-h{
+    display: block;
+}
+.box-more{
+    display:none;
+}
+.visible{
+    display: block!important;
+    z-index: 999999!important;
+    position: absolute!important;
+  
+}
+.visible li{
+    background-color: white!important;
+}
+}
+
