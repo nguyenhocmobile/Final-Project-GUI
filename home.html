@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispy Chicken</title>
+    <link rel="stylesheet" href="css/bootstrap4.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/home_responsive.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="contain-header">
+            <div class="header-logo">
+                <img src="./Image/logo.png" alt="#" class="img-logo">
+            </div>
+            <div class="header-find">
+                <div class="search">
+                    <input type="search" placeholder="Bạn muốn ăn gì?...">
+                    <div class="icon-find">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="header-choose-domain">
+                <p>Khu vực của bạn:</p>
+                <div id="choose-domain">
+                    <p><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</p>
+                </div>
+                <div class="hide-choose">
+                    <ul>
+                        <li>
+                            <p><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-map-marker-alt"></i> Miền Bắc</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-hotline">
+                <a href="#"><i class="fa-solid fa-phone"></i></a>
+                <a href="#">Hotline mua hàng</a>
+                <a href="#">0376681323</a>
+            </div>
+            <div class="header-cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#">Chi tiết</a>
+                <a href="#">Giỏ Hàng</a>
+            </div>
+            <div class="header-login">
+                <div class="login">
+                    <button>Đăng nhập</button>
+                </div>
+                <div class="choose-language">
+                    <p>VN</p>
+                </div>
+            </div>
+            <div class="list-header">
+                <div class="icon-list">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav-header">
+                    <a href="#"><i class="fa-solid fa-user-xmark"></i> Đăng nhập</a>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="choose-domain-responsive">
+            <div class="change-domain">
+                <p>Khu vực của bạn:
+                    <a><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</a>
+                    <a href="#">Thay đổi</a>
+                </p>
+                <p>
+                    <a><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</a>
+                    <a href="#">Thay đổi</a>
+                </p>
+            </div>
+            <div class="list-header">
+                <div class="icon-list">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav-header">
+                    <a href="#"><i class="fa-solid fa-user-xmark"></i> Đăng nhập</a>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
+                </div>
+            </div>
+        </div>
+        <div class="content-sale">
+            <div class="spinner"></div>
+            <a href="#">KHUYẾN MÃI ĐẾN 20% NGÀY 3/4. XEM NGAY</a>
+        </div>
+        <div class="navigation-bar">
+            <ul>
+                <li><a href="#" class="nav-active">MÓN LẺ</a></li>
+                <li><a href="#">NƯỚC</a></li>
+                <li><a href="#">COMBO 1 NGƯỜI</a></li>
+                <li><a href="#">COMBO NHÓM</a></li>
+                <li><a href="#">KHUYẾN MÃI</a></li>
+                <div class="more-nav">
+                    <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                    <div class="box-more">
+                        <a href="#">COMBO NHÓM</a>
+                        <a href="#">KHUYẾN MÃI</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="content-review">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Image/foodreview1.jpg" alt="Los Angeles">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Image/foodreview2.png" alt="Chicago">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Image/foodreview3.png" alt="New York">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-content">
+        <div class="container-cart">
+            <div class="content-left">
+                <p id="nav-selected">NỔI BẬT</p>
+            </div>
+            <div class="content-right">
+                <div class="cart-content"></div>
+                <div class="cart-content"></div>
+                <div class="cart-content"></div>
+                <div class="cart-content"></div>
+                <div class="cart-content"></div>
+                <div class="cart-content"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-container">
+        <div class="main-container-footer">
+            <div class="footer-col">
+                <h3>THÔNG TIN HỖ TRỢ</h3>
+                <a href="#">Giới thiệu Crispy Chicken</a>
+                <a href="#">Thông tin tuyển dụng</a>
+                <a href="#">Chính sách mua hàng Online</a>
+                <a href="#" id="notified"><img src="Image/dathongbao.png" alt=""></a>
+                <div class="inf-hotline">
+                    <a href="#">
+                        <p>Hotline phản ánh chất lượng dịch vụ:</p>
+                        <p>037.668.1323</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>THÔNG TIN LIÊN LẠC</h3>
+                <a href="#">
+                    <p>Hotline bán hàng:</p>
+                    <p>1900.63.39.09 (Bấm phím 1)</p>
+                </a>
+                <a href="#">
+                    <p>Hotline khiếu nại:</p>
+                    <p>1900.63.39.09 (Bấm phím 2)</p>
+                </a>
+            </div>
+            <!-- <div class="footer-col">
+                <h3>HỆ THỐNG CỬA HÀNG</h3>
+                <div class="domain">
+                    <input type="radio" id="mienbac" value="Miền Bắc">
+                    <label for="mienbac">
+                    <p>Khu vực:</p>
+                    <p>Miền Bắc</p>
+                </label>
+                    <input type="radio" id="miennam_trung" value="Miền Nam - Miền Trung">
+                    <label for="miennam_trung">
+                    <p>Khu vực:</p>
+                    <p>Miền Nam - Miền Bắc</p>
+                </label>
+                    <div class="address-info">
+                        <ul>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>379 Hoàng Văn Thụ, P2, Q.Tân Bình, HCM:</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>290 Hoàng Văn Thụ, P4, Q.Tân Bình, HCM:</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>499 Nguyễn Thị Thập, Q.7, HCM:</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+            <div class="footer-col">
+                <h3>PHƯƠNG THỨC THANH TOÁN</h3>
+                <div class="international-cart">
+                    <img src="Image/international_card.png" alt="">
+                </div>
+                <div class="internal-cart">
+                    <img src="Image/internal_card.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="return">
+        <i class="fas fa-arrow-circle-up"></i>
+    </div>
+    <div class="phone-animation">
+        <a href="#">
+            <div class="icon-phone">
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="phone-content">
+                <p>Đặt hàng ngay</p>
+                <p>037.668.1323</p>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>
