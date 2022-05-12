@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/home_responsive.css">
+    <script src="js/jquery-min.js"></script>
 
 </head>
 
@@ -51,8 +52,8 @@
                 <a href="#">Hotline mua hàng</a>
                 <a href="#">0376681323</a>
             </div>
-            <div class="header-cart">
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="header-cart" id="header-cart">
+                <a href="#content-cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="#">Chi tiết</a>
                 <a href="#">Giỏ Hàng</a>
             </div>
@@ -74,6 +75,7 @@
                 </div>
             </div>
         </div>
+
     </header>
     <div class="main-container">
         <div class="choose-domain-responsive">
@@ -103,16 +105,15 @@
         </div>
         <div class="navigation-bar">
             <ul>
-                <li><a href="#" class="nav-active">MÓN LẺ</a></li>
-                <li><a href="#">NƯỚC</a></li>
-                <li><a href="#">COMBO 1 NGƯỜI</a></li>
-                <li><a href="#">COMBO NHÓM</a></li>
-                <li><a href="#">KHUYẾN MÃI</a></li>
-                <div class="more-nav">
+                <li class="nav-title"><a href="#content-right" class="sas nav-active">MÓN LẺ</a></li>
+                <li class="nav-title"><a href="#content-right" class="sas">KEM</a></li>
+                <li class="nav-title"><a href="#content-right" class="sas">COMBO 1 NGƯỜI</a></li>
+                <!--đổi phần này-->
+                <div class="more-nav" id="more-nav">
                     <a href="#"><i class="fas fa-ellipsis-h"></i></a>
-                    <div class="box-more">
-                        <a href="#">COMBO NHÓM</a>
-                        <a href="#">KHUYẾN MÃI</a>
+                    <div class="box-more" id="box-more">
+                        <li class="nav-title"><a href="#content-right" class="sas">COMBO NHÓM</a></li>
+                        <li class="nav-title"><a href="#content-right" class="sas">KHUYẾN MÃI</a></li>
                     </div>
                 </div>
             </ul>
@@ -151,20 +152,21 @@
         </div>
     </div>
     <div class="container-content">
-        <div class="container-cart">
-            <div class="content-left">
+        <div class="container-cart" id="container-cart">
+            <div class="content-left" id="content-left">
                 <p id="nav-selected">NỔI BẬT</p>
             </div>
-            <div class="content-right">
-                <div class="cart-content"></div>
-                <div class="cart-content"></div>
-                <div class="cart-content"></div>
-                <div class="cart-content"></div>
-                <div class="cart-content"></div>
-                <div class="cart-content"></div>
+            <div class="content-right" id="content-right">
+
+            </div>
+            <div class="content-cart" id="content-cart">
+               
+                <table class="tableCart" id="tableCart">
+                    
+                </table>
             </div>
         </div>
-    </div>
+    </div> 
     <div class="footer-container">
         <div class="main-container-footer">
             <div class="footer-col">
@@ -244,6 +246,10 @@
             </div>
         </a>
     </div>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/waitingCart.js"></script>
 </body>
 
 </html>
