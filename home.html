@@ -58,8 +58,8 @@
                 <a href="#">Giỏ Hàng</a>
             </div>
             <div class="header-login">
-                <div class="login">
-                    <button>Đăng nhập</button>
+                <div class="login js-HandlerLR is-relatived">
+                    <button onclick="dieu_huong()">Đăng nhập</button>
                 </div>
                 <div class="choose-language">
                     <p>VN</p>
@@ -70,7 +70,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div class="nav-header">
-                    <a href="#"><i class="fa-solid fa-user-xmark"></i> Đăng nhập</a>
+                    <a href="#" onclick="dieu_huong()"><i class="fa-solid fa-user-xmark"></i> Đăng nhập</a>
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div class="nav-header">
-                    <a href="#"><i class="fa-solid fa-user-xmark"></i> Đăng nhập</a>
+                    <a href="#" onclick="dieu_huong()"><i class="fa-solid fa-user-xmark"></i> Đăng nhập</a>
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
                 </div>
             </div>
@@ -160,13 +160,16 @@
 
             </div>
             <div class="content-cart" id="content-cart">
-               
+
                 <table class="tableCart" id="tableCart">
-                    
+
+                </table>
+                <table class="waitCart" id="waitCart">
+
                 </table>
             </div>
         </div>
-    </div> 
+    </div>
     <div class="footer-container">
         <div class="main-container-footer">
             <div class="footer-col">
@@ -233,7 +236,7 @@
         </div>
     </div>
     <div class="return">
-        <i class="fas fa-arrow-circle-up"></i>
+        <a href="#" class="cd-top js-cd-top"><i class="fas fa-arrow-circle-up"></i></a>
     </div>
     <div class="phone-animation">
         <a href="#">
@@ -246,10 +249,86 @@
             </div>
         </a>
     </div>
+    <div class="form-login" id="dangnhap">
+        <div class="container">
+            <!-- close btn -->
+            <div class="" onclick="dong()">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="title-text">
+                <div class="title login">
+                    Đăng Nhập
+                </div>
+                <div class="title signup">
+                    Đăng Ký
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="slide-controls">
+                    <input type="radio" name="slide" id="login" checked>
+                    <input type="radio" name="slide" id="signup">
+                    <label for="login" class="slide login">Đăng Nhập</label>
+                    <label for="signup" class="slide signup">Đăng Ký</label>
+                    <div class="slider-tab"></div>
+                </div>
+                <div class="form-inner">
+                    <form action="#" class="login">
+                        <div class="field">
+                            <input id="js-LG_account" type="text" class="input-field" placeholder="Tên Đăng Nhập"
+                                maxlength="24" required>
+                        </div>
+                        <div class="field">
+                            <input id="js-LG_password" type="password" class="input-field" placeholder="Mật khẩu"
+                                maxlength="12" required>
+                        </div>
+                        <div class="pass-link">
+                            <a href="#">Quên Mật Khẩu?</a>
+                        </div>
+                        <div class="field btn">
+                            <div class="btn-layer"></div>
+                            <input id="js-btn-login" type="submit" value="Đăng Nhập">
+                        </div>
+                        <div class="signup-link">
+                            Chưa Có Tài Khoản? <a href=""> Đăng Ký Ngay</a>
+                        </div>
+                    </form>
+                    <!-- Form Đăng kí -->
+                    <form action="#" class="signup">
+                        <div class="field">
+                            <input id="js-RG_gmail" type="email" class="input-field" placeholder="Nhập vào gmail"
+                                required>
+                        </div>
+                        <div class="field">
+                            <input id="js-RG_account" type="text" class="input-field" placeholder="Tên đăng nhập"
+                                maxlength="24" required>
+                        </div>
+                        <div class="field">
+                            <input id="js-RG_password" type="password" class="input-field" placeholder="Nhập mật khẩu"
+                                maxlength="12" required>
+                        </div>
+                        <div class="field">
+                            <input id="js-RG_RePassword" type="password" class="input-field"
+                                placeholder="Nhập lại mật khẩu" maxlength="12" required>
+                        </div>
+                        <input id="js-RG_radio" type="checkbox" class="check-box"><span> Tôi đã đồng ý với
+                            <a href="#">điều khoản</a> và <a href="#">dịch vụ</a>.</span>
+                        <div class="field btn">
+                            <div class="btn-layer"></div>
+                            <input id="js-btn-register" type="submit" value=" Đăng Ký">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/util.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
     <script src="js/waitingCart.js"></script>
+    <script src="js/LoginRegister.js"></script>
+   
+
 </body>
 
 </html>

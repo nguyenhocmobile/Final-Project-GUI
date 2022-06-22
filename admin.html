@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap4.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="js/jquery-min.js"></script>
+    <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+    <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+    <title>Document</title>
+    <style>
+        /* .listCart{
+          width: 400px;
+            height: 300px;
+          overflow-y: scroll;
+            overflow-x: scroll;
+        } */
+        /* .listAccount{
+            background-color: black;
+        } */
+        .dadTheOrder,
+        .dadListAccount {
+            width: 595px;
+            height: 300px;
+            overflow-y: scroll;
+
+        }
+
+        .HeadTheOrder th {
+            padding: 40px;
+        }
+
+        .HeadListAccount th {
+            padding: 15px;
+        }
+
+        .maincontainer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cartContainer {
+            width: 400px;
+        }
+
+        .listTheOrder {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* .listCart{
+            background-color: blue;
+        } */
+        .addCart {
+            float: right;
+        }
+
+        .listaccount td,
+        .listprodurt th,
+        .listprodurt td {
+            padding: 30px;
+        }
+
+        .ui-dialog {
+            position: fixed;
+            margin-left: 40%;
+            margin-top: 20%;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="listAccount" id="listAccount">
+
+            <table class="HeadListAccount" id="HeadListAccount">
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Ngày đăng kí</th>
+                    <th>Thao tác</th>
+                </tr>
+            </table>
+            <div class="dadListAccount">
+                <table class="listaccount" id="listaccount">
+
+                </table>
+            </div>
+        </div>
+        <div class="dadListOrder">
+            <table class="HeadTheOrder" id="HeadTheOrder">
+                <tr>
+                    <th>Username</th>
+                    <th>Sản phẩm</th>
+                    <th>Trạng thái</th>
+                    <th>Tổng tiền</th>
+                    <th>Xác nhận</th>
+                </tr>
+            </table>
+            <div class="dadTheOrder">
+                <table class="listTheOrder" id="listTheOrder"></table>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="cartContainer">
+        <div class="listCart" id="listCart">
+            <table class="listprodurt" id="listprodurt"></table>
+        </div>
+        <div class="buttonCart">
+            <button class="addCart" id="addCart" onclick="openAdd()">Thêm món hàng</button>
+        </div>
+    </div>
+
+    <div id="dialog-1" title="Sửa sản phẩm"> <label for="" >Tên sản phẩm</label><input type="text" name="" id="nameI">  <br> <label for="">Giá</label> <br><input type="text" name="" id="priceI"> <br><label for="">Ảnh</label><input
+            type="file" id="fileUpload"> <br> <label for="">Loại</label> <br>
+        <select name="type" id="typeI">
+            <option value="odd dish">odd dish</option>
+            <option value="ice cream">ice cream</option>
+            <option value="alone">alone</option>
+            <option value="couple">couple</option>
+        </select>
+        <div>
+            <button class="adjustButton" id="adjustButton">Xác nhận </button>
+        </div>
+    </div>
+    <div id="dialog-2" title="Sửa sản phẩm"> <label for="" >Tên sản phẩm</label><input type="text" name="" id="nameII">  <br> <label for="">Giá</label> <br><input type="text" name="" id="priceII"> <br><label for="">Ảnh</label><input
+        type="file" id="fileUploadII"> <br> <label for="">Loại</label> <br>
+    <select name="type" id="typeII">
+        <option value="odd dish">odd dish</option>
+        <option value="ice cream">ice cream</option>
+        <option value="alone">alone</option>
+        <option value="couple">couple</option>
+    </select>
+    <div>
+        <button class="adjustButtonI" id="adjustButtonI">Xác nhận </button>
+    </div>
+</div>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js">
+
+    </script>
+      <script>
+        $(function () {
+            $("#dialog-1").dialog({
+                autoOpen: false,
+            });
+            $("#dialog-2").dialog({
+                autoOpen:false,
+            })
+        });  
+    </script>
+    <script src="js/CartAddMin.js">
+
+    </script>
+  
+
+
+</body>
+
+</html>

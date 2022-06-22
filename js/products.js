@@ -1,8 +1,8 @@
 var listproduct;
 var getlistproduct = localStorage.getItem("item");
 
-
-function render(type) { //render menu
+function render(type) {
+  //render menu
   var result = "";
   for (let i = 0; i < listproduct.length; i++) {
     if (listproduct[i].type === type) {
@@ -23,7 +23,8 @@ function render(type) { //render menu
   }
   document.getElementById("content-right").innerHTML = result;
 }
-function addValue() { // button thêm số lượng
+function addValue() {
+  // button thêm số lượng
   var getindex = document.getElementsByClassName("add");
   for (let j = 0; j < getindex.length; j++) {
     getindex[j].onclick = function () {
@@ -34,13 +35,14 @@ function addValue() { // button thêm số lượng
     };
   }
 }
-function subtractValue() { //button giảm số lượng
+function subtractValue() {
+  //button giảm số lượng
   var getindex = document.getElementsByClassName("subtract");
   for (let j = 0; j < getindex.length; j++) {
     getindex[j].onclick = function () {
       var findIndex = $(getindex[j]).closest("div").find("input");
       var getvalue = findIndex.val();
-      if (getvalue <2) {
+      if (getvalue < 2) {
         findIndex.val(1);
       } else {
         getvalue--;
@@ -50,7 +52,8 @@ function subtractValue() { //button giảm số lượng
   }
 }
 
-function changeTab() { //chuyển đổi qua lại giữa các menu hàng
+function changeTab() {
+  //chuyển đổi qua lại giữa các menu hàng
   var x = document.getElementsByClassName("sas");
   var l = document.getElementById("content-left");
   var r = document.getElementById("content-right");
@@ -70,39 +73,32 @@ function changeTab() { //chuyển đổi qua lại giữa các menu hàng
       switch (i) {
         case 0:
           render("odd dish");
+          setObjectCart();
           addValue();
           subtractValue();
-          setObjectCart();
-          deleteItemfromCart();
-          additem();
-          subtractitem()
+
           break;
         case 1:
           render("ice cream");
+          setObjectCart();
           addValue();
           subtractValue();
-          setObjectCart();
-          deleteItemfromCart();
-          additem();
-          subtractitem()
+
           break;
         case 2:
           render("alone");
-          addValue();
           setObjectCart();
+          addValue();
+
           subtractValue();
-          deleteItemfromCart();
-          additem();
-          subtractitem()
+
           break;
         case 3:
           render("couple");
           setObjectCart();
           addValue();
           subtractValue();
-          deleteItemfromCart();
-          additem();
-          subtractitem()
+
           break;
       }
     };
@@ -113,4 +109,3 @@ render("odd dish");
 changeTab();
 addValue();
 subtractValue();
-
