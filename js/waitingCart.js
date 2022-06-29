@@ -1,8 +1,9 @@
-var getlistwaitingcart = localStorage.getItem("waitItem");
+
 let getWaitButton = document.getElementById("order");
 var listwaitingitem;
 
 function getwaitingcart() {
+  var getlistwaitingcart = localStorage.getItem("waitItem");
   if (getlistwaitingcart) {
     listwaitingitem = JSON.parse(getlistwaitingcart);
   } else {
@@ -51,6 +52,7 @@ function pushItem() {
 }
 function renderWaitCart() {
   var getusername = document.getElementById("js-Username");
+  var listwaitingitem = JSON.parse(localStorage.getItem("waitItem"));
   var result = `<tr>
   <th>Stt</th>
   <th>Sản phẩm</th>
@@ -65,14 +67,40 @@ function renderWaitCart() {
     var k = item.cart.map((a) => {
       return a.name + ` x ` + a.value + `<br>`;
     });
+    var color ='green'
+    if(item.status=='deny'){
+      color='red'
+    }else if(item.status=='Waiting'){
+      color='yellow'
+    }
     return `<tr> <td>${
       index + 1
-    }</td> <td><p>${k}</p></td> <td>${item.sumTotal}</td> <td>${item.status}</td> </tr>`;
+    }</td> <td><p>${k}</p></td> <td>${item.sumTotal} đồng</td> <td style="color:${color}!important;">${item.status}</td> </tr>`;
   });
 
   result += renderItem.toString().replace(/,/g, " ");
 
   document.getElementById("waitCart").innerHTML = result;
+}
+function setUp(){
+  Swal.fire({
+    title: 'Thông báo!',
+    text: "Bạn muốn xác nhận mua đơn hàng này ?",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Đồng ý'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      pushItem()
+      Swal.fire(
+        'Accepted!',
+        'Đơn hàng của bạn đã được lưu, vui lòng chờ người quản lí xác nhận',
+        'success'
+      )
+    }
+  })
 }
 getwaitingcart();
 renderWaitCart();

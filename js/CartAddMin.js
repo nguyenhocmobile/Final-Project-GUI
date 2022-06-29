@@ -24,7 +24,13 @@ function renderCartAdmin() {
     var listwait = item.cart.map((e) => {
       return e.name + ` x ` + e.value + `<br>`;
     });
-    return `<tr> <td>${item.username}</td> <td><p>${listwait}</p></td><td>${item.status}</td> <td>${item.sumTotal}</td> <td><a href="javascript:;" class="confirm" id="${index}" onclick="confirmCart()">Thao tác</a></td> </tr>`;
+    var color ='green'
+    if(item.status=='deny'){
+      color='red'
+    }else if(item.status=='Waiting'){
+      color='yellow'
+    }
+    return `<tr> <td>${item.username}</td> <td><p>${listwait}</p></td><td style="color:${color}!important;">${item.status}</td> <td>${item.sumTotal}</td> <td><a href="javascript:;" class="confirm" id="${index}" onclick="confirmCart()">Thao tác</a></td> </tr>`;
   });
   result += renderResult.toString().replace(/,/g, " ");
 
@@ -75,35 +81,55 @@ function confirmCart() {
   for (let i = 0; i < select.length; i++) {
     select[i].onclick = function () {
       var index = select[i].id;
-      swal(
-        {
-          title: "",
-          text: "Thao tác",
-          type: "",
-          cancelButtonText: "Hủy",
-          showCancelButton: true,
-          cancelButtonColor: "#DD6B55",
+      Swal.fire({
+        title: 'Thao tác',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Xác nhận',
+        denyButtonText: `Từ chối`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          listwaitingitem[index].status = "accept";
+          localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
 
-          confirmButtonColor: "#DD6B55",
-          confirmButtonText: "Xác nhận",
-          closeOnConfirm: true,
-          closeOnCancel: true,
-        },
-        function (isConfirm) {
-          if (isConfirm) {
-            listwaitingitem[index].status = "accept";
-            localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
-
-            renderCartAdmin();
-            confirmCart();
-          } else {
-            listwaitingitem[index].status = "deny";
-            localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
-            renderCartAdmin();
-            confirmCart();
-          }
+          renderCartAdmin();
+          confirmCart();
+       
+          Swal.fire('Đã xác nhận đơn hàng', '', 'success')
+        } else if (result.isDenied) {
+          listwaitingitem[index].status = "deny";
+          localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
+          renderCartAdmin();
+          confirmCart();
+          Swal.fire('Đã từ chối đơn hàng', '', 'warning')
         }
-      );
+      })
+      // swal(
+      //   {
+      //     title: "",
+      //     text: "Thao tác",
+      //     type: "",
+
+      //     cancelButtonText: "Hủy",
+      //     showCancelButton: true,
+      //     cancelButtonColor: "#DD6B55",
+      //     showCloseButton: true,
+      //     confirmButtonColor: "#DD6B55",
+      //     confirmButtonText: "Xác nhận",
+      //     closeOnConfirm: true,
+      //     closeOnCancel: true,
+          
+      //   },
+      //   function (isConfirm) {
+      //     if (isConfirm) {
+  
+      //     } else {
+    
+         
+      //     }
+      //   }
+      // );
     };
   }
 }
@@ -121,9 +147,23 @@ function renderProducts() {
 </tr>`;
 
   var mainArray = listproducts.map((a, b) => {
+    var typp =''
+    if(a.type=='odd dish'){
+      typp ='Món lẻ'
+    }else if(a.type=='ice cream'){
+      typp='Kem'
+    }else if(a.type=='alone'){
+      typp='Combo 1 người'
+    }else if(a.type=='couple'){
+      typp='Combo nhóm'
+    }else if(a.type=='water'){
+      typp='Nước'
+    }else if(a.type=='bonus'){
+      typp='Khuyến mãi'
+    }
     return `<tr> <th> ${b + 1}</th> <th>${a.name}</th><th> <img src="${
       a.src
-    }" alt="" srcset=""></th>  <th>${a.type}</th> <th>${
+    }" alt="" srcset=""></th>  <th>${typp}</th> <th>${
       a.price
     }</th> <th><a href="javascript:;" class="settingbutton ${b}">Sửa</a><a href="javascript:;" class="deletebutton ${b}" onclick="deleteProduct(${b})">Xóa</a></th></tr>`;
   });
@@ -179,17 +219,49 @@ function addProducts() {
     var price = document.getElementById("priceII").value;
     var src = document.getElementById("fileUploadII").value.substring(12);
     var type = document.getElementById("typeII").value;
-    listproducts.push({
-      name: name,
-      type: type,
-      src: src,
-      price: price + " đồng",
-      value: "1",
-    });
-    localStorage.setItem("item", JSON.stringify(listproducts));
-    renderProducts();
-    settingProducts();
-    saveSetting();
+    var sameName='no same'
+   if(name!=""&&price!=""&&src!=""){
+      for(let item of listproducts){
+        if(item.name==name){
+          sameName=name;
+        }
+      }
+     if(sameName=='no same'){
+      listproducts.push({
+        name: name,
+        type: type,
+        src: src,
+        price: price + " đồng",
+        value: "1",
+      });
+      localStorage.setItem("item", JSON.stringify(listproducts));
+      renderProducts();
+      settingProducts();
+      saveSetting();
+      Swal.fire({
+        icon: 'success',
+        title: 'Đã thêm sản phẩm mới',
+        showConfirmButton: false,
+        timer: 1500
+      })
+     }
+     else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Lỗi',
+        text: 'Sai dữ liệu hoặc đã có món hàng trùng tên !',
+        
+      })
+    }
+   }else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Lỗi',
+      text: 'Sai dữ liệu hoặc đã có món hàng trùng tên !',
+      
+    })
+   }
+
     $("#dialog-2").dialog("close")
   };
 }

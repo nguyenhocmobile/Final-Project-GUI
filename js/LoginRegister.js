@@ -203,6 +203,7 @@ function login() {
 						`;
             document.querySelector(".js-HandlerLR").classList.add("js-isLogin");
             document.getElementById("dangnhap").remove();
+         
             render("odd dish");
             changeTab();
             addValue();
@@ -214,6 +215,8 @@ function login() {
             deleteItemfromCart();
             additem();
             subtractitem();
+            getwaitingcart();
+            renderWaitCart();
             Handle_LogOut();
           }
         }
@@ -239,11 +242,21 @@ signupLink.onclick = () => {
   signupBtn.click();
   return false;
 };
+function delay(){
+  document.body.classList.remove('hidden')
+  document.getElementById('login-ctn').style.animation='rotation 0.6s infinite linear';
+  document.getElementById('login-ctn').style.animationIterationCount='1';
+}
 function dieu_huong() {
   document.getElementById("dangnhap").style.visibility = "visible";
+    setTimeout(delay,0)
 }
 function dong() {
+  
   document.getElementById("dangnhap").style.visibility = "hidden";
+  document.body.classList.add('hidden')
+  document.getElementById('login-ctn').style.animation='';
+  document.getElementById('login-ctn').style.animationIterationCount='';
 }
 
 login();
