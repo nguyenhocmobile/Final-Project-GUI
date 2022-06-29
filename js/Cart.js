@@ -8,7 +8,11 @@ var listCart;
 navres.onclick = function () {
   boxmore.classList.toggle("visible");
 };
-
+function delay(){
+  document.body.classList.remove('hidden')
+  document.getElementById('login-ctn').style.animation='rotation 0.6s infinite linear';
+  document.getElementById('login-ctn').style.animationIterationCount='1';
+}
 function addItemtoCart(name, value, img, price, priceforone, status, username) {
   //render sản phẩm khi đã có đủ dữ liệu
   var cartItem = {
@@ -23,10 +27,11 @@ function addItemtoCart(name, value, img, price, priceforone, status, username) {
   var check = document
     .querySelector(".js-HandlerLR")
     .classList.contains("js-isLogin");
-  if (!check || username == "no login")
-    alert(
-      "Hãy đăng nhập để có thể mua sắm\nNếu bạn chưa có tài khoản thì hãy nhanh tay tạo cho mình một tài khoản đi nào."
-    );
+  if (!check || username == "no login"){
+
+  document.getElementById("dangnhap").style.visibility = "visible";
+  setTimeout(delay,0)
+  }
   else {
     for (var i = 0; i < valueGetCart.length; i++) {
       if (valueGetCart[i].name == name) {
@@ -47,6 +52,12 @@ function addItemtoCart(name, value, img, price, priceforone, status, username) {
     additem();
     subtractitem();
     renderCart();
+    swal.fire({
+      icon: 'success',
+      title: 'Đã thêm vào giỏ hàng ',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 }
 
@@ -55,6 +66,8 @@ function setObjectCart() {
   var getindex = document.getElementsByClassName("them");
   var getnamebyselect = document.getElementsByClassName("ten");
   var getusername = document.getElementById("js-Username");
+  var valueGetProduct = JSON.parse(localStorage.getItem('item'));
+  var valueGetCart = JSON.parse(localStorage.getItem('cart'));
   if (getusername == null) {
     getusername = "no login";
   }
@@ -86,6 +99,10 @@ function gotoCart() {
   var ctn = document.getElementById("container-cart");
   var ctc = document.getElementById("content-cart");
   m.onclick = function () {
+    var x = document.getElementsByClassName("sas");
+    for (let j = 0; j < x.length; j++) {
+        x[j].classList.remove("nav-active");
+      }
     l.style.display = "none";
     r.style.display = "none";
     ctn.style.display = "block";
@@ -138,7 +155,7 @@ function renderCart() {
   result += `<td></td>`;
   result += `<td></td>`;
   result += `<td></td>`;
-  result += `<td><Button id="order" onclick="pushItem()">Đặt Hàng</Button></td>`;
+  result += `<td><Button id="order" onclick="setUp()">Đặt Hàng</Button></td>`;
   if (k == 0) {
     result = `<img src="Image/cart.png" alt="" srcset="">`;
 
@@ -161,13 +178,31 @@ function deleteItemfromCart() {
   var m = document.getElementsByClassName("deleteItem");
   for (let i = 0; i < m.length; i++) {
     m[i].onclick = function () {
-      valueGetCart.splice(i, 1);
-      localStorage.setItem("cart", JSON.stringify(valueGetCart));
-      setObjectCart();
-      renderCart();
-      deleteItemfromCart();
-      additem();
-      subtractitem();
+      Swal.fire({
+        title: 'Thông báo!',
+        text: "Bạn có chắc chắn muốn xóa món hàng này?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Đồng ý',
+      
+      }).then((result) => {
+        if (result.isConfirmed) {
+          valueGetCart.splice(i, 1);
+          localStorage.setItem("cart", JSON.stringify(valueGetCart));
+          setObjectCart();
+          renderCart();
+          deleteItemfromCart();
+          additem();
+          subtractitem();
+          Swal.fire(
+            'Deleted!',
+            'Món hàng đã được xóa',
+            'success'
+          )
+        }
+      })
     };
   }
 }

@@ -1,11 +1,12 @@
-var getlistproduct=localStorage.getItem('item')
-var getcart = localStorage.getItem('cart')
+
+
 var listproduct;
 var listCart;
 var getlistwaitingcart=localStorage.getItem('waitItem')
 
 
 function getproduct() {
+  var getlistproduct=localStorage.getItem('item')
     if (getlistproduct) {
       listproduct = JSON.parse(getlistproduct);
     } else {
@@ -152,12 +153,118 @@ function getproduct() {
           src: "Image/couple3.png",
           price: "55000 đồng",
           value: "1",
+        },   {
+          name: "7 Up",
+          type: "water",
+          src: "Image/7up.png",
+          price: "10000 đồng",
+          value: "1",
         },
+        {
+          name: "Ice hương đào",
+          type: "water",
+          src: "Image/ice.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Revive",
+          type: "water",
+          src: "Image/revice.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Coca Cola",
+          type: "water",
+          src: "Image/coca.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Mirinda vị cam",
+          type: "water",
+          src: "Image/mirinda.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Pepsi",
+          type: "water",
+          src: "Image/pepsi.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Mirinda vị xá xị",
+          type: "water",
+          src: "Image/xaxi.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Mirinda vị soda kem",
+          type: "water",
+          src: "Image/sodakem.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Pepsi không calo",
+          type: "water",
+          src: "Image/nocalo.png",
+          price: "10000 đồng",
+          value: "1",
+        },
+        {
+          name: "Bánh Tiramisu",
+          type: "bonus",
+          src: "Image/banhsale1.png",
+          price: "28000 đồng",
+          value: "1",
+        },
+        {
+          name: "Combo khuyến mãi 1",
+          type: "bonus",
+          src: "Image/gaca.png",
+          price: "65000 đồng",
+          value: "1",
+        },
+        {
+          name: "Combo khuyến mãi 2",
+          type: "bonus",
+          src: "Image/bonus2.png",
+          price: "55000 đồng",
+          value: "1",
+        },
+        {
+          name: "Bánh Pavlova",
+          type: "bonus",
+          src: "Image/pavlova.png",
+          price: "25000 đồng",
+          value: "1",
+        },
+        {
+          name: "Bánh Crepe",
+          type: "bonus",
+          src: "Image/creep.png",
+          price: "25000 đồng",
+          value: "1",
+        },
+        {
+          name: "Bánh Phomat",
+          type: "bonus",
+          src: "Image/phomat.png",
+          price: "25000 đồng",
+          value: "1",
+        },
+        
       ];
       localStorage.setItem("item", JSON.stringify(listproduct));
     }
   }
 function createCart(){
+  var getcart = localStorage.getItem('cart')
     if(getcart){
         listCart=JSON.parse(getcart)
     }else{
@@ -203,7 +310,7 @@ function createCart(){
 		window.addEventListener("scroll", function(event) {
 			if( !scrolling ) {
 				scrolling = true;
-				(!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 250) : window.requestAnimationFrame(checkBackToTop);
+				(!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 000) : window.requestAnimationFrame(checkBackToTop);
 			}
 		});
 		backTop.addEventListener('click', function(event) {
@@ -219,6 +326,10 @@ function createCart(){
 		scrolling = false;
 	}
 })();
+var hieuung = document.getElementById("check");
+hieuung.addEventListener('change', function () {
+  document.body.classList.toggle("darkmode")
+})
 createAccount();
  getproduct();
  createCart();
