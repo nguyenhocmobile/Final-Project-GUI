@@ -1222,4 +1222,10 @@ td img{
     width: 100%!important;
     height: 60%!important;
 }
+.ui-dialog {
+    position: fixed!important;
+    margin-left: 40%;
+    margin-top: 20%;
+
+}
 
