@@ -19,6 +19,8 @@ function renderCartAdmin() {
   <th></th>
   <th></th>
   <th></th>
+  <th></th>
+  <th></th>
 </tr>`;
   var renderResult = listwaitingitem.map((item, index) => {
     var listwait = item.cart.map((e) => {
@@ -30,7 +32,7 @@ function renderCartAdmin() {
     }else if(item.status=='Waiting'){
       color='yellow'
     }
-    return `<tr> <td>${item.username}</td> <td><p>${listwait}</p></td><td style="color:${color}!important;">${item.status}</td> <td>${item.sumTotal}</td> <td><a href="javascript:;" class="confirm" id="${index}" onclick="confirmCart()">Thao tác</a></td> </tr>`;
+    return `<tr> <td>${item.username}</td> <td><p>${listwait}</p></td><td>${item.phone}</td><td>${item.address}</td><td style="color:${color}!important;">${item.status}</td> <td>${item.sumTotal} đồng</td> <td><a href="javascript:;" class="confirm" id="${index}" onclick="confirmCart()">Thao tác</a></td> </tr>`;
   });
   result += renderResult.toString().replace(/,/g, " ");
 
@@ -47,6 +49,7 @@ function renderListAccount() {
     <th></th>
     <th></th>
     <th></th>
+    
 </tr>`;
   var renderResult = findUser.map((item) => {
     return `<tr> <td><p class="nameUser">${item.username}</p></td> <td>${item.password}</td> <td>${item.RegisterDay}</td> <td><button class="deleteAccount" id="${item.username}">Xóa</button></td> </tr>`;
@@ -181,10 +184,17 @@ function deleteProduct(index) {
 }
 function settingProducts() {
   var d = document.getElementsByClassName("settingbutton");
+  var listproducts = JSON.parse(localStorage.getItem("item"));
   for (let i = 0; i < d.length; i++) {
     d[i].onclick = function () {
-      $("#dialog-1").dialog("open");
+    
       $("#adjustButton").attr("class", `${this.className.substring(14)}`);
+      $("#adjustButtonIII").attr("class", `${this.className.substring(14)}`);
+      if(listproducts[i].type=='bonus'){
+        $("#dialog-3").dialog("open");
+      }else{
+        $("#dialog-1").dialog("open");
+      }
     };
   }
 }
@@ -198,18 +208,42 @@ function saveSetting() {
     var src = document.getElementById("fileUpload").value.substring(12);
     var type = document.getElementById("typeI").value;
     listproducts[index].name = name;
-    listproducts[index].price = price + " đồng";
+    listproducts[index].srcpice = price + " đồng";
     listproducts[index].src = src;
     listproducts[index].type = type;
+    listproducts[index].price=parseInt(parseInt(price)-(parseInt(price)*(parseInt(listproducts[index].heso)/100)));
     localStorage.setItem("item", JSON.stringify(listproducts));
     renderProducts();
     settingProducts();
     saveSetting();
     $("#dialog-1").dialog("close")
   };
+  var n = document.getElementById('adjustButtonIII');
+  n.onclick = function(){
+    var listproducts = JSON.parse(localStorage.getItem("item"));
+    var index = n.className;
+    var name = document.getElementById("nameIII").value;
+    var price = document.getElementById("priceIII").value;
+    var src = document.getElementById("fileUploadIII").value.substring(12);
+    var heso = document.getElementById("hesoIII").value;
+    listproducts[index].name=name;
+    listproducts[index].srcpice=price +" đồng";
+    listproducts[index].src=src;
+    listproducts[index].heso=heso;
+    listproducts[index].price=parseInt(parseInt(price)-(parseInt(price)*(parseInt(heso)/100)));
+    localStorage.setItem("item", JSON.stringify(listproducts));
+    renderProducts();
+    settingProducts();
+    saveSetting();
+    
+    $("#dialog-3").dialog("close")
+  }
 }
 function openAdd() {
   $("#dialog-2").dialog("open");
+}
+function openBonusAdd(){
+  $("#dialog-4").dialog("open");
 }
 function addProducts() {
   var m = document.getElementById("adjustButtonI");
@@ -220,7 +254,7 @@ function addProducts() {
     var src = document.getElementById("fileUploadII").value.substring(12);
     var type = document.getElementById("typeII").value;
     var sameName='no same'
-   if(name!=""&&price!=""&&src!=""){
+   if(name!=""&&price!=""&&src!=""&&!isNaN(parseInt(price))){
       for(let item of listproducts){
         if(item.name==name){
           sameName=name;
@@ -230,8 +264,10 @@ function addProducts() {
       listproducts.push({
         name: name,
         type: type,
+        srcpice:price+" đồng",
+        heso:"0",
         src: src,
-        price: price + " đồng",
+        price: parseInt(parseInt(price)-(parseInt(price)*(parseInt(0)/100))),
         value: "1",
       });
       localStorage.setItem("item", JSON.stringify(listproducts));
@@ -265,6 +301,62 @@ function addProducts() {
     $("#dialog-2").dialog("close")
   };
 }
+function addBonusProducts() {
+  var m = document.getElementById("adjustButtonIV");
+  m.onclick = function () {
+    var listproducts = JSON.parse(localStorage.getItem("item"));
+    var name = document.getElementById("nameIV").value;
+    var price = document.getElementById("priceIV").value;
+    var src = document.getElementById("fileUploadIV").value.substring(12);
+    var sameName='no same'
+    var heso = document.getElementById("hesoIV").value;
+    if(name!=""&&price!=""&&src!=""&&!isNaN(parseInt(price))&&!isNaN(parseInt(heso))){
+      for(let item of listproducts){
+        if(item.name==name){
+          sameName=name;
+        }
+      }
+     if(sameName=='no same'){
+      listproducts.push({
+        name: name,
+        type: 'bonus',
+        srcpice:price+" đồng",
+        heso:heso,
+        src: src,
+        price: parseInt(parseInt(price)-(parseInt(price)*(parseInt(heso)/100))) ,
+        value: "1",
+      });
+      localStorage.setItem("item", JSON.stringify(listproducts));
+      renderProducts();
+      settingProducts();
+      saveSetting();
+      Swal.fire({
+        icon: 'success',
+        title: 'Đã thêm sản phẩm mới',
+        showConfirmButton: false,
+        timer: 1500
+      })
+     }
+     else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Lỗi',
+        text: 'Sai dữ liệu hoặc đã có món hàng trùng tên !',
+        
+      })
+    }
+   }else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Lỗi',
+      text: 'Sai dữ liệu hoặc đã có món hàng trùng tên !',
+      
+    })
+   }
+
+    $("#dialog-4").dialog("close")
+  };
+}
 renderListAccount();
 deleteAccount();
 renderCartAdmin();
@@ -273,3 +365,4 @@ renderProducts();
 settingProducts();
 saveSetting();
 addProducts();
+addBonusProducts();

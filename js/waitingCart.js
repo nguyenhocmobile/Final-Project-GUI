@@ -14,6 +14,9 @@ function getwaitingcart() {
 
 function pushItem() {
   var getusername = document.getElementById("js-Username");
+  var tinh=$('select[name="calc_shipping_provinces"]')
+  var quan = $('select[name="calc_shipping_district"]');
+  var sdt =document.getElementById('phone').value;
   var arrayClone = valueGetCart.filter(function (item, index) {
     return item.username === getusername.innerText;
   });
@@ -35,6 +38,8 @@ function pushItem() {
     cart: statusArray,
     sumTotal: sumTotal,
     status: "Waiting",
+    address:"tỉnh " +tinh.children('option:selected').text()+"-"+quan.children('option:selected').text(),
+    phone:sdt,
   });
 
   localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
@@ -57,6 +62,8 @@ function renderWaitCart() {
   <th>Stt</th>
   <th>Sản phẩm</th>
   <th>Tổng tiền</th>
+  <th>Địa chỉ</th>
+  <th>Số điện thoại</th>
   <th>Trạng thái</th>
 </tr>`;
 
@@ -75,7 +82,7 @@ function renderWaitCart() {
     }
     return `<tr> <td>${
       index + 1
-    }</td> <td><p>${k}</p></td> <td>${item.sumTotal} đồng</td> <td style="color:${color}!important;">${item.status}</td> </tr>`;
+    }</td> <td><p>${k}</p></td> <td>${item.sumTotal} đồng</td><td>${item.address}</td><td>${item.phone}</td> <td style="color:${color}!important;">${item.status}</td> </tr>`;
   });
 
   result += renderItem.toString().replace(/,/g, " ");
@@ -92,15 +99,42 @@ function setUp(){
     cancelButtonColor: '#d33',
     confirmButtonText: 'Đồng ý'
   }).then((result) => {
+   
     if (result.isConfirmed) {
-      pushItem()
-      Swal.fire(
-        'Accepted!',
-        'Đơn hàng của bạn đã được lưu, vui lòng chờ người quản lí xác nhận',
-        'success'
-      )
+      $("#dialog-1").dialog("open");
+      // pushItem()
+    
     }
   })
+}
+function selectItem(){
+  var tinh=$('select[name="calc_shipping_provinces"]')
+  var quan = $('select[name="calc_shipping_district"]');
+  var sdt =document.getElementById('phone').value;
+ 
+ 
+  if(tinh.children('option:selected').text()!='Tỉnh / Thành phố' && quan.children('option:selected').text()!='Quận / Huyện' && !isNaN(parseInt(sdt))){
+    pushItem()
+    $("#dialog-1").dialog("close");
+    Swal.fire(
+      'Agree!',
+      'Đơn hàng của bạn đã được lưu, vui lòng chờ người quản lí xác nhận',
+      'success'
+    )
+  }else{
+    $("#dialog-1").dialog("close");
+    Swal.fire(
+      'Disagree!',
+      'Dữ liệu không hợp lệ',
+      'warning'
+    )
+  }
+
+
+
+
+
+
 }
 getwaitingcart();
 renderWaitCart();

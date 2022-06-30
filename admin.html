@@ -108,6 +108,8 @@
                 <tr>
                     <th>Username</th>
                     <th>Sản phẩm</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
                     <th>Trạng thái</th>
                     <th>Tổng tiền</th>
                     <th>Xác nhận</th>
@@ -126,7 +128,9 @@
         </div>
         <div class="buttonCart">
             <button class="addCart" id="addCart" onclick="openAdd()">Thêm món hàng</button>
+            <button class="addBonusCart" id="addBonusCart" onclick="openBonusAdd()">Thêm hàng khuyến mãi</button>
         </div>
+        
     </div>
 
     <div id="dialog-1" title="Sửa sản phẩm"> <label for="">Tên sản phẩm</label><input type="text" name="" id="nameI">
@@ -138,12 +142,27 @@
             <option value="alone">Combo 1 người</option>
             <option value="couple">Combo nhóm</option>
             <option value="water">Nước</option>
-            <option value="bonus">Khuyến mãi</option>
+    
         </select>
         <div>
             <button class="adjustButton" id="adjustButton">Xác nhận </button>
         </div>
     </div>
+    <div id="dialog-3" title="Sửa sản phẩm"> <label for="">Tên sản phẩm</label><input type="text" name="" id="nameIII">
+        <br> <label for="">Giá</label> <br><input type="text" name="" id="priceIII"> <br><label for="">Ảnh</label><input
+            type="file" id="fileUploadIII"> <br>
+        <label for="">Giảm</label> <br><input type="text" name="" id="hesoIII"> <br>
+        <div>
+            <button class="adjustButton" id="adjustButtonIII">Xác nhận </button>
+        </div>
+    </div>
+    <div id="dialog-4" title="Thêm sản phẩm khuyến mãi"> <label for="">Tên sản phẩm</label><input type="text" name="" id="nameIV">
+        <br> <label for="">Giá</label> <br><input type="text" name="" id="priceIV"> <br><label for="">Ảnh</label><input
+            type="file" id="fileUploadIV"> <br>
+        <label for="">Giảm</label> <br><input type="text" name="" id="hesoIV"> <br>
+        <div>
+            <button class="adjustButton" id="adjustButtonIV">Xác nhận </button>
+        </div>
     <div id="dialog-2" title="Thêm sản phẩm"> <label for="">Tên sản phẩm</label><input type="text" name="" id="nameII">
         <br> <label for="">Giá</label> <br><input type="text" name="" id="priceII"> <br><label for="">Ảnh</label><input
             type="file" id="fileUploadII"> <br> <label for="">Loại</label> <br>
@@ -153,7 +172,6 @@
             <option value="alone">Combo 1 người</option>
             <option value="couple">Combo nhóm</option>
             <option value="water">Nước</option>
-            <option value="bonus">Khuyến mãi</option>
         </select>
         <div>
             <button class="adjustButtonI" id="adjustButtonI">Xác nhận </button>
@@ -168,6 +186,12 @@
                 autoOpen: false,
             });
             $("#dialog-2").dialog({
+                autoOpen: false,
+            })
+            $("#dialog-3").dialog({
+                autoOpen: false,
+            })
+            $("#dialog-4").dialog({
                 autoOpen: false,
             })
         });  

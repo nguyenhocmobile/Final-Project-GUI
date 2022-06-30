@@ -27,14 +27,14 @@ function render(type) {
       
         if(listproduct[i].type!='bonus'){
           bonusPrice=   `<div class="gia">
-          <span class="giagoc">${listproduct[i].price}</span>
+          <span class="giagoc">${listproduct[i].price} đồng</span>
         </div>`
         }if(listproduct[i].type=='bonus'){
 
           bonusPrice=  
-           `<div class="giaao"> <span style="text-decoration: line-through;">${parseInt(parseInt(listproduct[i].price)*parseFloat(1.5))} đồng</span></div>
+           `<div class="giaao"> <span style="text-decoration: line-through;">${listproduct[i].srcpice}</span></div>
            <div class="gia">
-          <span class="giagoc">${listproduct[i].price}</span>
+          <span class="giagoc">${listproduct[i].price} đồng</span> 
         </div>`
         }
       result += `<div class="cart-content" style="font-weight: bolder;text-align: center;">
