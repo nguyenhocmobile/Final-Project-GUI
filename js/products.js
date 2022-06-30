@@ -32,10 +32,8 @@ function render(type) {
         }if(listproduct[i].type=='bonus'){
 
           bonusPrice=  
-           `<div class="giaao"> <span style="text-decoration: line-through;">${listproduct[i].srcpice}</span></div>
-           <div class="gia">
-          <span class="giagoc">${listproduct[i].price} đồng</span> 
-        </div>`
+         `
+           <div class="gia"> <span style="text-decoration: line-through;">${listproduct[i].srcpice}</span> <span class="giagoc">${listproduct[i].price} đồng</span> </div>`
         }
       result += `<div class="cart-content" style="font-weight: bolder;text-align: center;">
             <div class="hinhanh" style="border: 1px solid red;border-radius: 7px;">

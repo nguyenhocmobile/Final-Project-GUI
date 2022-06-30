@@ -30,7 +30,7 @@ function renderCartAdmin() {
     if(item.status=='deny'){
       color='red'
     }else if(item.status=='Waiting'){
-      color='yellow'
+      color='blue'
     }
     return `<tr> <td>${item.username}</td> <td><p>${listwait}</p></td><td>${item.phone}</td><td>${item.address}</td><td style="color:${color}!important;">${item.status}</td> <td>${item.sumTotal} đồng</td> <td><a href="javascript:;" class="confirm" id="${index}" onclick="confirmCart()">Thao tác</a></td> </tr>`;
   });

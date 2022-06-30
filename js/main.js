@@ -377,7 +377,7 @@ function createCart(){
 	var backTop = document.getElementsByClassName('js-cd-top')[0],
 		offset = 300, 
 		offsetOpacity = 1200, 
-		scrollDuration = 700,
+		scrollDuration = 000,
 		scrolling = false;
 
 	if( backTop ) {
