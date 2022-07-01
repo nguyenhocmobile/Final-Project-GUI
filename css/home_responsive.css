@@ -1,7 +1,7 @@
 @media only screen and (max-width: 320px) {
      :root {
-        --font-size-normal-1: 10px;
-        --font-size-normal-2: 9px;
+        --font-size-normal-1: 9px;
+        --font-size-normal-2: 8px;
         --font-size-normal-3: 8px;
         --primary-color-red: rgb(221, 0, 0);
         --primary-height-header: 50px;
@@ -9,7 +9,6 @@
     header {
         height: var(--primary-height-header);
     }
-   
     .contain-header,
     .content-sale,
     .navigation-bar,
@@ -43,12 +42,11 @@
     .icon-find {
         width: 26px;
         height: 26px;
-        transform: translateY(1px);
+        transform: translateY(0px) !important;
     }
     .header-find .search {
-        width: 150px;
+        width: 120px;
         height: 25px;
-        transform: translateX(-10px);
     }
     .header-find .search input {
         padding: 5px 25px 5px 15px;
@@ -56,7 +54,7 @@
         height: 100%;
     }
     .header-logo {
-        width: 150px;
+        width: 100px;
         height: 50px;
     }
     .header-logo img {
@@ -64,7 +62,8 @@
         height: 50px;
     }
     .header-find i {
-        transform: translate(1px, 3px);
+        font-size: 12px !important;
+        transform: translate(1px, 5px) !important;
     }
     .phone-animation a,
     .content-sale a,
@@ -111,21 +110,21 @@
     .spinner {
         left: -250px;
     }
-    .navigation-bar ul li:nth-last-child(2) a,
+    /* .navigation-bar ul li:nth-last-child(2) a,
     .navigation-bar ul li:nth-last-child(3) a {
         display: block;
     }
     .more-nav {
         display: block;
         transform: translate(-7px, 0px);
-    }
+    } */
     .main-container .choose-domain-responsive .list-header {
         display: block;
         color: var(--primary-color-red);
     }
     .choose-domain-responsive {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
     }
     .choose-domain-responsive .change-domain {
@@ -137,13 +136,12 @@
     .main-container .choose-domain-responsive p:last-child {
         display: block;
     }
-    .container-cart .content-right {}
     .container-cart .content-right {
         justify-content: center;
     }
     .container-cart .content-right .cart-content {
         width: 90%;
-        height: 200px;
+        height: 250px;
     }
     /* .container-cart .content-left {
         display: none;
@@ -154,6 +152,135 @@
     /* .inf-hotline {
         width: 100px;
     } */
+    /*  */
+    .content-left {
+        width: 20%;
+        margin-right: 0px;
+    }
+    .content-right {
+        padding: 5px;
+        width: 80%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #filterButton {
+        max-width: 100%;
+    }
+    #filterButton {
+        padding: 5px 10px;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #them,
+    .soluong {
+        font-size: var(--font-size-normal-2);
+    }
+    .giagoc {
+        font-size: var(--font-size-normal-1);
+    }
+    #searchType option,
+    #searchPrice option,
+    #sortPrice option,
+    #filterButton {
+        font-size: var(--font-size-normal-2) !important;
+    }
+    .nav-title a {
+        padding: 4px 8px !important;
+    }
+    .subtract,
+    .add {
+        font-size: var(--font-size-normal-3);
+        width: 15px !important;
+        height: 15px !important;
+    }
+    .soluong {
+        width: 50px !important;
+        height: 23px !important;
+        font-size: 13px;
+    }
+    .ten {
+        font-size: 13px;
+        height: 15%;
+        margin: 5px auto 0px !important;
+        /* line-height: 2.5 !important; */
+    }
+    .content-sale {
+        margin: 0px;
+        padding: 0px;
+    }
+    .spinner {
+        transform: scale(0.7);
+    }
+    .content-left div label {
+        font-size: 13px;
+    }
+    #nav-selected {
+        font-size: 14px;
+    }
+    .icon-find {
+        transform: translateY(2px);
+    }
+    .icon-find i {
+        font-size: 13px;
+        transform: translate(1px, 2px)
+    }
+    .content-left div label {
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr td,
+    .waitCart tbody tr td {
+        padding: 3px 0px;
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr:first-child th,
+    .waitCart tbody tr:first-child th {
+        font-size: var(--font-size-normal-1);
+        padding: 10px;
+    }
+    #order {
+        padding: 7px 6px;
+        border-radius: 6px;
+    }
+    #deleteItem {
+        padding: 7px 9px;
+    }
+    .tableCart tbody tr td img {
+        transform: scale(0.8);
+    }
+    .subtractCart,
+    .addCart {
+        width: 12px !important;
+        height: 12px !important;
+    }
+    .box-more {
+        border-radius: 5px;
+        overflow: hidden;
+        transform: translate(0px, 0px)
+    }
+    .box-more li {
+        width: 100px;
+        border-radius: 0px !important;
+    }
+    .navigation-bar-responsive {
+        display: flex;
+        height: 180px;
+        width: 90px;
+        padding: 5px;
+        top: 80px;
+    }
+    .navigation-bar-responsive div {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .return a i,
+    .icon-phone i {
+        font-size: 20px;
+    }
+    .nav-title {
+        margin: 0 !important;
+    }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 360px) {
@@ -197,9 +324,9 @@
         margin: 0 7px;
     }
     .icon-find {
-        width: 26px;
-        height: 26px;
-        transform: translateY(1px);
+        width: 27px;
+        height: 27px;
+        transform: translateY(-1px);
     }
     .header-find .search {
         width: 150px;
@@ -220,7 +347,8 @@
         height: 50%;
     } */
     .header-find i {
-        transform: translate(1px, 3px);
+        font-size: 12px;
+        transform: translate(1px, 6px);
     }
     .phone-animation a,
     .content-sale a,
@@ -267,22 +395,25 @@
     .spinner {
         left: -300px;
     }
-    .navigation-bar ul li:nth-last-child(2) a,
+    /* .navigation-bar ul li:nth-last-child(2) a,
     .navigation-bar ul li:nth-last-child(3) a {
         display: none;
-    }
-    .more-nav {
+    } */
+    /* .more-nav {
         display: block;
         transform: translate(-7px, 0px);
-    }
+    } */
     .main-container .choose-domain-responsive .list-header {
         display: block;
         color: var(--primary-color-red);
     }
     .choose-domain-responsive {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
+    }
+    .list-header {
+        margin-right: 5px;
     }
     .choose-domain-responsive .change-domain {
         margin-left: 10px;
@@ -301,7 +432,119 @@
     }
     .container-cart .content-right .cart-content {
         width: 90%;
-        height: 200px;
+        height: 240px;
+    }
+    /*  */
+    .content-left {
+        width: 25%;
+    }
+    .content-right {
+        padding: 5px;
+        width: 75%;
+        justify-content: center;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice {
+        max-width: 100%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #them,
+    .soluong {
+        font-size: var(--font-size-normal-2);
+    }
+    .giagoc {
+        font-size: var(--font-size-normal-1);
+    }
+    #searchType option,
+    #searchPrice option,
+    #sortPrice option,
+    #filterButton {
+        font-size: var(--font-size-normal-2) !important;
+    }
+    .nav-title a {
+        padding: 4px 8px !important;
+    }
+    .subtract,
+    .add {
+        font-size: var(--font-size-normal-3);
+        width: 15px !important;
+        height: 15px !important;
+    }
+    .soluong {
+        width: 50px !important;
+        height: 24px !important;
+    }
+    .ten {
+        font-size: 13px;
+        height: 15%;
+        margin: 5px auto 0px !important;
+    }
+    .content-sale {
+        margin: 0px;
+        padding: 1px 0;
+    }
+    .spinner {
+        transform: scale(0.5);
+    }
+    .content-left div label {
+        font-size: 13px;
+    }
+    #nav-selected {
+        font-size: 14px;
+    }
+    .content-left div label {
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr td,
+    .waitCart tbody tr td {
+        padding: 5px 2px;
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr:first-child th,
+    .waitCart tbody tr:first-child th {
+        font-size: var(--font-size-normal-1);
+        padding: 5px;
+    }
+    #order {
+        padding: 7px 6px;
+        border-radius: 6px;
+    }
+    #deleteItem {
+        padding: 7px 9px;
+    }
+    .tableCart tbody tr td img {
+        transform: scale(0.9);
+    }
+    .subtractCart,
+    .addCart {
+        width: 12px !important;
+        height: 12px !important;
+    }
+    .box-more {
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .box-more li {
+        width: 120px;
+        border-radius: 0px !important;
+    }
+    .navigation-bar-responsive {
+        display: flex;
+        height: 180px;
+        width: 90px;
+        padding: 5px;
+        top: 90px;
+    }
+    .navigation-bar-responsive div {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .return a i,
+    .icon-phone i {
+        font-size: 25px;
     }
 }
 
@@ -345,8 +588,8 @@
         margin: 0 7px;
     }
     .icon-find {
-        width: 27px;
-        height: 27px;
+        width: 26px;
+        height: 26px;
     }
     .header-find .search {
         width: 150px;
@@ -354,7 +597,7 @@
         transform: translateY(3px);
     }
     .header-find .search input {
-        padding: 5px 30px 5px 15px;
+        padding: 7px 40px 7px 15px;
         width: 100%;
     }
     .header-logo {
@@ -366,13 +609,14 @@
         height: 50px;
     }
     .header-find i {
-        transform: translate(1px, 3px);
+        font-size: 13px;
+        transform: translate(1px, 5px);
     }
     .phone-animation a,
     .content-sale a,
     .navigation-bar ul li a,
     .return {
-        font-size: var(--font-size-normal-1);
+        font-size: var(--font-size-normal-1) !important;
     }
     .header-choose-domain {
         padding: 0px;
@@ -416,29 +660,129 @@
     .spinner {
         left: -300px;
     }
-    .navigation-bar ul li:nth-last-child(2) a,
-    .navigation-bar ul li:nth-last-child(3) a {
-        display: none;
-    }
-    .more-nav {
+    /* .more-nav {
         display: block;
         transform: translate(-7px, 0px);
-    }
+    } */
     #notified {
         transform: scale(0.7) translateX(-30px);
     }
     .container-cart .content-right .cart-content {
         width: 90%;
-        height: 200px;
+        height: 240px;
     }
-    
+    .content-sale {
+        padding: 2px
+    }
+    /*  */
+    .content-left {
+        width: 20%;
+    }
+    .content-right {
+        padding: 5px;
+        width: 75%;
+        justify-content: center;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice {
+        max-width: 100%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #them,
+    .soluong {
+        font-size: var(--font-size-normal-2);
+    }
+    .giagoc {
+        font-size: var(--font-size-normal-1);
+    }
+    #searchType option,
+    #searchPrice option,
+    #sortPrice option,
+    #filterButton {
+        font-size: var(--font-size-normal-2) !important;
+    }
+    .nav-title a {
+        padding: 4px 8px !important;
+    }
+    .subtract,
+    .add {
+        font-size: var(--font-size-normal-3);
+        width: 15px !important;
+        height: 15px !important;
+    }
+    .soluong {
+        width: 40px !important;
+        height: 20px !important;
+    }
+    .ten {
+        font-size: 13px;
+        height: 10%;
+        margin: 5px auto 0px !important;
+        /* line-height: 2.5 !important; */
+    }
+    .content-sale {
+        margin: 0px;
+        padding: 2px 0;
+    }
+    .spinner {
+        transform: scale(0.6);
+    }
+    .content-left div label {
+        font-size: 13px;
+    }
+    #nav-selected {
+        font-size: 14px;
+    }
+    .content-left div label {
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr td,
+    .waitCart tbody tr td {
+        padding: 5px 2px;
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr:first-child th,
+    .waitCart tbody tr:first-child th {
+        font-size: var(--font-size-normal-1);
+    }
+    #order {
+        padding: 7px 6px;
+        border-radius: 6px;
+    }
+    #deleteItem {
+        padding: 7px 9px;
+    }
+    .box-more {
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .box-more li {
+        width: 120px;
+        border-radius: 0px !important;
+    }
+    .navigation-bar-responsive {
+        display: flex;
+        height: 200px;
+        width: 110px;
+    }
+    .navigation-bar-responsive div {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .return a i,
+    .icon-phone i {
+        font-size: 25px;
+    }
 }
 
-@media only screen and (min-width: 410px) and (max-width: 510px) {
+@media only screen and (min-width: 410px) and (max-width: 560px) {
      :root {
-        --font-size-normal-1: 11px;
-        --font-size-normal-2: 10px;
-        --font-size-normal-3: 9px;
+        --font-size-normal-1: 10px;
+        --font-size-normal-2: 9px;
+        --font-size-normal-3: 8px;
     }
     header {
         height: 60px;
@@ -478,15 +822,15 @@
         transform: translateY(3px);
     }
     .icon-find {
-        width: 27px;
-        height: 27px;
+        width: 29px;
+        height: 29px;
     }
     .header-find .search {
         width: 100%;
         height: 32px;
     }
     .header-find .search input {
-        padding: 5px 30px 5px 15px;
+        padding: 8px 40px 8px 15px;
         width: 100%;
     }
     .header-logo {
@@ -498,7 +842,8 @@
         height: 50px;
     }
     .header-find i {
-        transform: translate(1px, 3px);
+        font-size: 14px;
+        transform: translate(0px, 8px);
     }
     .phone-animation a,
     .content-sale a,
@@ -533,8 +878,8 @@
         display: none;
     }
     .navigation-bar ul li a {
-        padding: 4px 8px;
-        border-radius: 4px;
+        padding: 3px 6px !important;
+        border-radius: 2px;
     }
     .header-hotline {
         margin-left: 10px;
@@ -547,17 +892,115 @@
     }
     .spinner {
         left: -300px;
+        transform: scale(0.5);
     }
     #notified {
         transform: scale(0.7) translateX(-30px);
     }
     .container-cart .content-right .cart-content {
         width: 45%;
+        height: 300px;
+    }
+    /*  */
+    .content-left {
+        width: 15%;
+    }
+    .content-right {
+        padding: 5px;
+        width: 85%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice {
+        max-width: 100%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #them,
+    .soluong {
+        font-size: var(--font-size-normal-2);
+    }
+    .giagoc {
+        font-size: var(--font-size-normal-1);
+    }
+    #searchType option,
+    #searchPrice option,
+    #sortPrice option,
+    #filterButton {
+        font-size: var(--font-size-normal-2) !important;
+    }
+    .nav-title a {
+        padding: 4px 8px !important;
+    }
+    .subtract,
+    .add {
+        font-size: var(--font-size-normal-3);
+        width: 15px !important;
+        height: 15px !important;
+    }
+    .soluong {
+        width: 40px !important;
+        height: 20px !important;
+    }
+    .ten {
+        font-size: 13px;
+        height: 10%;
+    }
+    .content-sale {
+        margin: 0px;
+        padding: 2px 0;
+    }
+    .spinner {
+        transform: scale(0.6);
+    }
+    .content-left div label {
+        font-size: 13px;
+    }
+    #nav-selected {
+        font-size: 14px;
+    }
+    .content-left div label {
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr td,
+    .waitCart tbody tr td {
+        padding: 5px 2px;
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr:first-child th,
+    .waitCart tbody tr:first-child th {
+        font-size: var(--font-size-normal-1);
+    }
+    #order {
+        padding: 8px 12px;
+    }
+    #deleteItem {
+        padding: 8px 12px;
+    }
+    .box-more {
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .box-more li {
+        width: 120px;
+        border-radius: 0px !important;
+    }
+    .navigation-bar-responsive {
+        display: flex;
         height: 200px;
+    }
+    .navigation-bar-responsive div {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .return a i,
+    .icon-phone i {
+        font-size: 25px;
     }
 }
 
-@media only screen and (min-width: 510px) and (max-width: 660px) {
+@media only screen and (min-width: 560px) and (max-width: 660px) {
      :root {
         --font-size-normal-1: 12px;
         --font-size-normal-2: 11px;
@@ -600,15 +1043,15 @@
         width: 200px;
     }
     .icon-find {
-        width: 28px;
-        height: 28px;
+        width: 29px;
+        height: 29px;
     }
     .header-find .search {
         width: 130px;
         height: 32px;
     }
     .header-find .search input {
-        padding: 5px 30px 5px 15px;
+        padding: 8px 40px 8px 15px;
         width: 130px;
     }
     .header-logo {
@@ -620,7 +1063,11 @@
         height: 50px;
     }
     .header-find i {
-        transform: translate(1px, 5px);
+        font-size: 14px;
+        transform: translate(1px, 8px);
+    }
+    .content-sale {
+        padding: 2px 0;
     }
     .phone-animation a,
     .content-sale a,
@@ -639,7 +1086,7 @@
         margin: 0 5px 0 12px;
     }
     .login button {
-        padding: 4px 5px;
+        padding: 6px 8px;
         margin: 1px 1px 2px;
     }
     .choose-domain-responsive {
@@ -660,13 +1107,79 @@
     }
     .spinner {
         left: -300px;
+        transform: scale(0.6);
     }
     #notified {
         transform: scale(0.7) translateX(-30px);
     }
     .container-cart .content-right .cart-content {
         width: 45%;
-        height: 200px;
+        height: 300px;
+    }
+    /*  */
+    .content-left {
+        width: 15%;
+    }
+    .content-right {
+        padding: 5px;
+        width: 85%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice {
+        max-width: 100%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #them,
+    .soluong {
+        font-size: var(--font-size-normal-2);
+    }
+    .giagoc {
+        font-size: var(--font-size-normal-1);
+    }
+    #searchType option,
+    #searchPrice option,
+    #sortPrice option,
+    #filterButton {
+        font-size: var(--font-size-normal-2) !important;
+    }
+    .nav-title a {
+        padding: 4px 8px !important;
+    }
+    .subtract,
+    .add {
+        font-size: var(--font-size-normal-3);
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .soluong {
+        width: 60px !important;
+        height: 30px !important;
+    }
+    .ten {
+        font-size: 14px;
+        height: 10%;
+    }
+    .content-left div label {
+        font-size: 14px;
+    }
+    .content-left div label {
+        font-size: var(--font-size-normal-1);
+    }
+    .tableCart tbody tr td {
+        padding: 10px 5px;
+    }
+    #order {
+        padding: 8px 12px;
+    }
+    #deleteItem {
+        padding: 8px 12px;
+    }
+    .return a i,
+    .icon-phone i {
+        font-size: 30px;
     }
 }
 
@@ -724,7 +1237,7 @@
         height: 32px;
     }
     .header-find .search input {
-        padding: 5px 30px 5px 15px;
+        padding: 8px 40px 8px 15px;
         width: 150px;
     }
     .header-logo {
@@ -736,7 +1249,11 @@
         height: 50px;
     }
     .header-find i {
-        transform: translate(1px, 5px);
+        font-size: 14px;
+        transform: translate(1px, 8px);
+    }
+    .content-sale {
+        padding: 4px 0;
     }
     .phone-animation a,
     .content-sale a,
@@ -755,23 +1272,81 @@
         margin: 0 5px 0 12px;
     }
     .login button {
-        padding: 4px 5px;
+        padding: 6px 8px;
         margin: 1px 1px 2px;
     }
     .spinner {
         left: -300px;
+        transform: scale(0.7);
     }
     .container-cart .content-right .cart-content {
         width: 45%;
-        height: 200px;
+        height: 300px;
+    }
+    .content-left {
+        width: 15%;
+    }
+    .content-right {
+        padding: 5px;
+        width: 85%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice {
+        max-width: 100%;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #them,
+    .soluong {
+        font-size: var(--font-size-normal-2);
+    }
+    .giagoc {
+        font-size: var(--font-size-normal-1);
+    }
+    #searchType option,
+    #searchPrice option,
+    #sortPrice option,
+    #filterButton {
+        font-size: var(--font-size-normal-2) !important;
+    }
+    .nav-title a {
+        padding: 4px 8px !important;
+    }
+    .subtract,
+    .add {
+        font-size: var(--font-size-normal-3);
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .soluong {
+        width: 60px !important;
+        height: 30px !important;
+    }
+    .ten {
+        font-size: 14px;
+        height: 10%;
+    }
+    .content-left div label {
+        font-size: 14px;
+    }
+    .tableCart tbody tr td {
+        padding: 10px 5px;
+    }
+    #order {
+        padding: 8px 12px;
+    }
+    #deleteItem {
+        padding: 8px 12px;
     }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 780px) {
      :root {
-        --font-size-normal-1: 13px;
-        --font-size-normal-2: 12px;
-        --font-size-normal-3: 11px;
+        --font-size-normal-1: 12px;
+        --font-size-normal-2: 11px;
+        --font-size-normal-3: 10px;
     }
     .contain-header,
     .content-sale,
@@ -815,7 +1390,7 @@
         height: 32px;
     }
     .header-find .search input {
-        padding: 2px 30px 2px 15px;
+        padding: 8px 40px 8px 15px;
         width: 150px;
     }
     .header-logo {
@@ -823,7 +1398,8 @@
         height: 50px;
     }
     .header-find i {
-        transform: translate(1px, 5px);
+        font-size: 14px;
+        transform: translate(1px, 8px);
     }
     .phone-animation a,
     .content-sale a,
@@ -843,6 +1419,27 @@
     }
     .spinner {
         left: -350px;
+    }
+    #searchType,
+    #searchPrice,
+    #sortPrice,
+    #filterButton {
+        max-width: 100%;
+    }
+    .content-left {
+        width: 15%;
+    }
+    .content-right {
+        width: 85%;
+    }
+    .tableCart tbody tr td {
+        padding: 10px 5px;
+    }
+    #order {
+        padding: 8px 12px;
+    }
+    #deleteItem {
+        padding: 8px 12px;
     }
 }
 
@@ -894,7 +1491,7 @@
         height: 32px;
     }
     .header-find .search input {
-        padding: 4px 30px 4px 15px;
+        padding: 8px 40px 8px 15px;
         width: 180px;
     }
     .header-logo {
@@ -902,13 +1499,21 @@
         height: 50px;
     }
     .header-find i {
-        transform: translate(1px, 6px);
+        font-size: 15px;
+        transform: translate(1px, 10px);
     }
     .phone-animation a,
     .content-sale a,
     .navigation-bar ul li a,
     .return {
         font-size: var(--font-size-normal-1);
+    }
+    .content-left {
+        width: 20%;
+    }
+    .content-right {
+        padding: 5px;
+        width: 80%;
     }
 }
 
@@ -964,23 +1569,19 @@
     }
 }
 
-
-
-@media only screen and (max-width: 510px){
-.fa-ellipsis-h{
-    display: block;
+@media only screen and (max-width: 510px) {
+    .fa-ellipsis-h {
+        display: block;
+    }
+    .box-more {
+        display: none;
+    }
+    .visible {
+        display: block!important;
+        z-index: 999999!important;
+        position: absolute!important;
+    }
+    .visible li {
+        /* background-color: white!important; */
+    }
 }
-.box-more{
-    display:none;
-}
-.visible{
-    display: block!important;
-    z-index: 999999!important;
-    position: absolute!important;
-  
-}
-.visible li{
-    background-color: white!important;
-}
-}
-

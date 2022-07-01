@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crispy Chicken</title>
-    <link rel="shortcut icon" type="image/png"
-        href="https://food89.vn/data/pcat/icon/ga-nhap-khau.png" />
+    <link rel="shortcut icon" type="image/png" href="https://food89.vn/data/pcat/icon/ga-nhap-khau.png" />
     <link rel="stylesheet" href="css/bootstrap4.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -24,11 +23,10 @@
 </head>
 
 <body>
-    <header> 
+    <header>
         <div class="contain-header">
             <div class="header-logo">
-                <a href="javascript:;" id="refesh" onclick="refesh()"> <img src="./Image/logooo.png" alt="#"
-                        class="img-logo"></a>
+                <a href="javascript:;" id="refesh" onclick="refesh()"> <img src="./Image/logooo.png" alt="#" class="img-logo"></a>
             </div>
             <div class="header-find">
 
@@ -43,9 +41,6 @@
                 </div>
 
             </div>
-
-
-
             <div class="header-hotline">
                 <a href="#"><i class="fa-solid fa-phone"></i></a>
                 <a href="#">Hotline mua hàng</a>
@@ -61,12 +56,13 @@
                     <button onclick="dieu_huong()">Đăng nhập</button>
                 </div>
                 <div class="choose-language">
-                    <p>VN</p>
+                    <!-- <p>VN</p> -->
+                    <input id="check" type="checkbox" name="">
                 </div>
             </div>
-            <input id="check" type="checkbox" name="">
+
             <div class="list-header">
-                <div class="icon-list">
+                <div class="icon-list" onclick="showNavigationBar()">
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div class="nav-header">
@@ -79,7 +75,7 @@
     </header>
     <div class="main-container">
         <div class="choose-domain-responsive">
-            <div class="change-domain">
+            <!-- <div class="change-domain">
                 <p>Khu vực của bạn:
                     <a><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</a>
                     <a href="#">Thay đổi</a>
@@ -88,7 +84,7 @@
                     <a><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</a>
                     <a href="#">Thay đổi</a>
                 </p>
-            </div>
+            </div> -->
             <div class="list-header">
                 <div class="icon-list">
                     <i class="fa-solid fa-bars"></i>
@@ -114,9 +110,9 @@
                     <div class="box-more" id="box-more">
                         <li class="nav-title"><a href="#content-right" class="sas" id="couple">COMBO NHÓM</a></li>
                         <li class="nav-title"><a href="#content-right" class="sas" id="bonus">KHUYẾN MÃI</a></li>
+                        <li class="nav-title"><a href="#content-right" class="sas" id="water">NƯỚC GIẢI KHÁT</a></li>
                     </div>
                 </div>
-                <li class="nav-title"><a href="#content-right" class="sas" id="water">NƯỚC GIẢI KHÁT</a></li>
             </ul>
         </div>
         <div class="content-review">
@@ -310,12 +306,10 @@
                 <div class="form-inner">
                     <form action="#" class="login">
                         <div class="field">
-                            <input id="js-LG_account" type="text" class="input-field" placeholder="Tên Đăng Nhập"
-                                maxlength="24" required>
+                            <input id="js-LG_account" type="text" class="input-field" placeholder="Tên Đăng Nhập" maxlength="24" required>
                         </div>
                         <div class="field">
-                            <input id="js-LG_password" type="password" class="input-field" placeholder="Mật khẩu"
-                                maxlength="12" required>
+                            <input id="js-LG_password" type="password" class="input-field" placeholder="Mật khẩu" maxlength="12" required>
                         </div>
                         <div class="pass-link">
                             <a href="#">Quên Mật Khẩu?</a>
@@ -331,20 +325,16 @@
                     <!-- Form Đăng kí -->
                     <form action="#" class="signup">
                         <div class="field">
-                            <input id="js-RG_gmail" type="email" class="input-field" placeholder="Nhập vào gmail"
-                                required>
+                            <input id="js-RG_gmail" type="email" class="input-field" placeholder="Nhập vào gmail" required>
                         </div>
                         <div class="field">
-                            <input id="js-RG_account" type="text" class="input-field" placeholder="Tên đăng nhập"
-                                maxlength="24" required>
+                            <input id="js-RG_account" type="text" class="input-field" placeholder="Tên đăng nhập" maxlength="24" required>
                         </div>
                         <div class="field">
-                            <input id="js-RG_password" type="password" class="input-field" placeholder="Nhập mật khẩu"
-                                maxlength="12" required>
+                            <input id="js-RG_password" type="password" class="input-field" placeholder="Nhập mật khẩu" maxlength="12" required>
                         </div>
                         <div class="field">
-                            <input id="js-RG_RePassword" type="password" class="input-field"
-                                placeholder="Nhập lại mật khẩu" maxlength="12" required>
+                            <input id="js-RG_RePassword" type="password" class="input-field" placeholder="Nhập lại mật khẩu" maxlength="12" required>
                         </div>
                         <input id="js-RG_radio" type="checkbox" class="check-box"><span> Tôi đã đồng ý với
                             <a href="#">điều khoản</a> và <a href="#">dịch vụ</a>.</span>
@@ -357,25 +347,39 @@
             </div>
         </div>
     </div>
-    <div id="dialog-1" title="Đơn hàng"> 
+    <div class="navigation-bar-responsive" id="navigation-bar-responsive">
+        <div class="login js-HandlerLR is-relatived">
+            <button onclick="dieu_huong()">Đăng nhập</button>
+        </div>
+        <div class="header-cart">
+            <a href="#content-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#">Chi tiết giỏ hàng</a>
+        </div>
+        <div class="header-hotline">
+            <a href="#"><i class="fa-solid fa-phone"></i></a>
+            <a href="#">Hotline mua hàng</a>
+        </div>
+        <div class="choose-language">
+            <input id="check" type="checkbox" name="">
+        </div>
+    </div>
+    <div id="dialog-1" title="Đơn hàng">
         <label for="">Tỉnh :</label>
         <select name="calc_shipping_provinces" id="tinh" required="">
             <option value="">Tỉnh / Thành phố</option>
           </select>
-          <br>
-          <label for="">Quận :</label>
-          <select name="calc_shipping_district" id="quan" required="">
+        <br>
+        <label for="">Quận :</label>
+        <select name="calc_shipping_district" id="quan" required="">
             <option value="">Quận / Huyện</option>
           </select>
-          <input class="billing_address_1" name="" type="hidden" value="">
-          <input class="billing_address_2" name="" type="hidden" value="">
-        
+        <input class="billing_address_1" name="" type="hidden" value="">
+        <input class="billing_address_2" name="" type="hidden" value="">
+
         <br>
         <label for="" id="">Số điện thoại</label>
         <input type="text" name="" id="phone">
-          <button class="btn" onclick="selectItem()" style="background-color:red">click</button>
-        
-        
+        <button class="btn" onclick="selectItem()" style="background-color:red">click</button>
     </div>
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>
@@ -384,61 +388,64 @@
     <script src="js/waitingCart.js"></script>
     <script src="js/update.js"></script>
     <script src="js/LoginRegister.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js">  </script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js">
+    </script>
     <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
-    <script>//<![CDATA[
+    <script>
+        //<![CDATA[
         if (address_2 = localStorage.getItem('address_2_saved')) {
-          $('select[name="calc_shipping_district"] option').each(function() {
-            if ($(this).text() == address_2) {
-              $(this).attr('selected', '')
-            }
-          })
-          $('input.billing_address_2').attr('value', address_2)
+            $('select[name="calc_shipping_district"] option').each(function() {
+                if ($(this).text() == address_2) {
+                    $(this).attr('selected', '')
+                }
+            })
+            $('input.billing_address_2').attr('value', address_2)
         }
         $('select[name="calc_shipping_provinces"]').each(function() {
-          var $this = $(this),
-            stc = ''
-          c.forEach(function(i, e) {
-            e += +1
-            stc += '<option value=' + e + '>' + i + '</option>'
-            $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
-            if (address_1 = localStorage.getItem('address_1_saved')) {
-              $('select[name="calc_shipping_provinces"] option').each(function() {
-                if ($(this).text() == address_1) {
-                  $(this).attr('selected', '')
-                }
-              })
-              $('input.billing_address_1').attr('value', address_1)
-            }
-            $this.on('change', function(i) {
-              i = $this.children('option:selected').index() - 1
-              var str = '',
-                r = $this.val()
-              if (r != '') {
-                arr[i].forEach(function(el) {
-                  str += '<option value="' + el + '">' + el + '</option>'
-                  $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+                var $this = $(this),
+                    stc = ''
+                c.forEach(function(i, e) {
+                    e += +1
+                    stc += '<option value=' + e + '>' + i + '</option>'
+                    $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+                    if (address_1 = localStorage.getItem('address_1_saved')) {
+                        $('select[name="calc_shipping_provinces"] option').each(function() {
+                            if ($(this).text() == address_1) {
+                                $(this).attr('selected', '')
+                            }
+                        })
+                        $('input.billing_address_1').attr('value', address_1)
+                    }
+                    $this.on('change', function(i) {
+                        i = $this.children('option:selected').index() - 1
+                        var str = '',
+                            r = $this.val()
+                        if (r != '') {
+                            arr[i].forEach(function(el) {
+                                str += '<option value="' + el + '">' + el + '</option>'
+                                $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+                            })
+                            var address_1 = $this.children('option:selected').text()
+
+
+
+                            $('select[name="calc_shipping_district"]').on('change', function() {
+                                var target = $(this).children('option:selected')
+                                target.attr('selected', '')
+                                $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                                var address_2 = target.text()
+                                $('input.billing_address_2').attr('value', address_2)
+
+
+                            })
+                        }
+                    })
                 })
-                var address_1 = $this.children('option:selected').text()
-             
-            
-              
-                $('select[name="calc_shipping_district"]').on('change', function() {
-                  var target = $(this).children('option:selected')
-                  target.attr('selected', '')
-                  $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
-                  var address_2 = target.text()
-                   $('input.billing_address_2').attr('value', address_2)
-                
-              
-                })
-              }
             })
-          })
-        })
-        //]]></script>
+            //]]>
+    </script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             const d = new Date();
             let hour = d.getHours();
 
@@ -448,9 +455,9 @@
             $("#dialog-1").dialog({
                 autoOpen: false,
             })
-     
-         
-  
+
+
+
         });
     </script>
 
