@@ -400,9 +400,22 @@ function createCart(){
 		scrolling = false;
 	}
 })();
-var hieuung = document.getElementById("check");
-hieuung.addEventListener('change', function () {
-  document.body.classList.toggle("darkmode")
+var hieuung = document.querySelectorAll("#check");
+for(var j=0;j<hieuung.length;j++){
+  hieuung[j].addEventListener('change',function(){
+    document.body.classList.toggle('darkmode')
+  })
+}
+$('#js-RG_gmail').on('blur',function(){
+  let warning =document.getElementById("warningEmail")
+ if(!$(this).val().includes("@")){
+  $(this).addClass("changeBorder")
+  warning.classList.remove("invisible")
+ }else{
+  $(this).removeClass("changeBorder")
+  warning.classList.add("invisible")
+ }
+
 })
 createAccount();
  getproduct();

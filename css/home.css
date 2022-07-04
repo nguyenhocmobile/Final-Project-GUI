@@ -1596,3 +1596,20 @@ body {
 .tableCart tbody tr td p {
     color: black !important;
 }
+.swal2-icon{
+    box-sizing: content-box!important;
+}
+.navigation-bar-responsive{
+    position: fixed;
+    margin-right: -150px;
+    transition:cubic-bezier(.1,.24,0,.91) 1s;
+}
+.show{
+    margin-right: 0px!important;
+}
+.changeBorder{
+    border: 1px solid red!important;
+}
+.invisible{
+    display: none;
+}
