@@ -56,7 +56,12 @@ function pushItem() {
   renderWaitCart();
 }
 function renderWaitCart() {
-  var getusername = document.getElementById("js-Username");
+  var getusername ;
+  if(document.getElementById("js-Username")){
+    getusername = document.getElementById("js-Username")
+  }else{
+    getusername='no login'
+  }
   var listwaitingitem = JSON.parse(localStorage.getItem("waitItem"));
   var result = `<tr>
   <th>Stt</th>

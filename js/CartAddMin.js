@@ -63,18 +63,36 @@ function deleteAccount() {
 
   for (let i = 0; i < select.length; i++) {
     select[i].onclick = function () {
-      var userArray = JSON.parse(localStorage.getItem("user"));
-      var newArray = [];
-      var us = select[i].id;
-      for (let j of userArray) {
-        if (us !== j.username) {
-          newArray.push(j);
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Bạn muốn xóa tài khoản này ?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          var userArray = JSON.parse(localStorage.getItem("user"));
+          var newArray = [];
+          var us = select[i].id;
+          for (let j of userArray) {
+            if (us !== j.username) {
+              newArray.push(j);
+            }
+          }
+          userArray = newArray;
+          localStorage.setItem("user", JSON.stringify(userArray));
+          renderListAccount();
+          deleteAccount();
+          Swal.fire(
+            'Deleted!',
+            'Đã xóa tài khoản thành công.',
+            'success'
+          )
         }
-      }
-      userArray = newArray;
-      localStorage.setItem("user", JSON.stringify(userArray));
-      renderListAccount();
-      deleteAccount();
+      })
+   
     };
   }
 }
@@ -176,11 +194,30 @@ function renderProducts() {
 }
 
 function deleteProduct(index) {
-  var listproducts = JSON.parse(localStorage.getItem("item"));
-  listproducts.splice(index, 1);
-  localStorage.setItem("item", JSON.stringify(listproducts));
-  renderProducts();
-  settingProducts();
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      var listproducts = JSON.parse(localStorage.getItem("item"));
+      listproducts.splice(index, 1);
+      localStorage.setItem("item", JSON.stringify(listproducts));
+      renderProducts();
+      settingProducts();
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+
+    }
+  })
+
 }
 function settingProducts() {
   var d = document.getElementsByClassName("settingbutton");

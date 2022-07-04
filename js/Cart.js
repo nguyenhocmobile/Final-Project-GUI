@@ -93,27 +93,30 @@ function setObjectCart() {
 }
 function gotoCart() {
   //chuyển main content sang cart
-  var m = document.getElementById("header-cart");
+  var m = document.querySelectorAll(".header-cart");
   var l = document.getElementById("content-left");
   var r = document.getElementById("content-right");
   var ctn = document.getElementById("container-cart");
   var ctc = document.getElementById("content-cart");
-  m.onclick = function () {
-    var x = document.getElementsByClassName("sas");
-    for (let j = 0; j < x.length; j++) {
-        x[j].classList.remove("nav-active");
-      }
-    l.style.display = "none";
-    r.style.display = "none";
-    ctn.style.display = "block";
-    ctc.style.display = "block";
-    setObjectCart();
-    renderCart();
-    deleteItemfromCart();
-    additem();
-    subtractitem();
-    renderWaitCart();
-  };
+ 
+  for(let element of m){
+    element.onclick = function () {
+      var x = document.getElementsByClassName("sas");
+      for (let j = 0; j < x.length; j++) {
+          x[j].classList.remove("nav-active");
+        }
+      l.style.display = "none";
+      r.style.display = "none";
+      ctn.style.display = "block";
+      ctc.style.display = "block";
+      setObjectCart();
+      renderCart();
+      deleteItemfromCart();
+      additem();
+      subtractitem();
+      renderWaitCart();
+    };
+  }
 }
 
 function renderCart() {
