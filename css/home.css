@@ -1629,29 +1629,14 @@ body {
 .tableCart tbody tr td p {
     color: black !important;
 }
-
-.swal2-icon {
+.swal2-icon{
     box-sizing: content-box!important;
 }
-
-.navigation-bar-responsive {
+.navigation-bar-responsive{
     position: fixed;
     margin-right: -150px;
-    transition: cubic-bezier(.1, .24, 0, .91) 1s;
+    transition:cubic-bezier(.1,.24,0,.91) 1s;
 }
-
-.show {
-    margin-right: 0px!important;
-}
-
-.changeBorder {
-    border: 1px solid red!important;
-}
-
-.invisible {
-    display: none;
-}
-
 .header-navbar-logout {
     cursor: pointer;
 }
@@ -1709,4 +1694,38 @@ body {
 .ui-widget-header {
     background: unset !important;
     background-color: var(--primary-color-red) !important;
+}
+#blurSidebar{
+  
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999!important;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.show{
+    margin-right: 0px!important;
+}
+.changeBorder{
+    border: 1px solid red!important;
+}
+.invisible{
+    display: none!important;
+}
+.visiblee{
+display: block!important;    
+}
+.fa-xmark{
+    color:var(--primary-color-red)!important;
+}
+
+.ui-dialog {
+    position: fixed!important;
+    margin-left: 40%;
+    margin-top: 20%;
+}
+#searchPrice{
+    text-align: center;
 }
