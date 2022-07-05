@@ -173,8 +173,32 @@ function refesh() {
   getwaitingcart();
   renderWaitCart();
 }
-
-function showNavigationBar() {
+function delaySlide(){
   let element = document.getElementById("navigation-bar-responsive");
   element.classList.toggle("show");
+}
+function delayBackGround(){
+  let element2 = document.getElementById("blurSidebar");
+  element2.classList.toggle("visiblee")
+}
+function showNavigationBar() {
+  let element2 = document.getElementById("blurSidebar");
+  element2.classList.toggle("visiblee")
+  setTimeout(delaySlide,0)
+  
+}
+function cancel(){
+  event.stopPropagation();
+}
+function hiddenSideBar(){
+  let element = document.getElementById("navigation-bar-responsive");
+  element.classList.toggle("show");
+  
+  setTimeout(delayBackGround,500)
+  
+  event.stopPropagation();
+}
+function hotLine(){
+  Swal.fire('Liên hệ với chúng tôi với hotLine:0376681323')
+
 }
