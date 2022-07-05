@@ -36,6 +36,7 @@ html {
     --color-text-address: black;
     --color-icon-more: rgb(221, 0, 0);
     --color-box-more: white;
+    --color-list-header: rgb(221, 0, 0);
 }
 
 .hidden {
@@ -61,6 +62,7 @@ html {
     --color-text-address: #9e062e;
     --color-icon-more: white;
     --color-box-more: #202020;
+    --color-list-header: white;
 }
 
 body {
@@ -1108,7 +1110,7 @@ form .btn input[type="submit"] {
 .searchResult {
     border: 1px solid red;
     display: none;
-    width: auto;
+    width: max-content;
     min-height: 300px;
     height: fit-content;
     position: absolute;
@@ -1116,15 +1118,32 @@ form .btn input[type="submit"] {
     z-index: 9999;
     margin-top: 5px;
     margin-left: -10%;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-40%);
 }
 
 .searchResult div {
-    width: max-content;
+    width: 100%;
+    border-bottom: 1px solid var(--primary-color-red);
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.searchResult div:hover {
+    background-color: var(--primary-color-red);
+    color: white;
+}
+
+.searchResult div:hover a {
+    color: white;
+    font-size: calc( 0.5px + var(--font-size-normal-2));
 }
 
 .searchResult div img {
     width: 50px!important;
     height: 50px!important;
+    border-radius: 5px;
 }
 
 .form-login {
@@ -1330,6 +1349,7 @@ td img {
 .ten {
     margin-top: 15px !important;
     height: 13%;
+    color: black !important;
 }
 
 .ten p {
@@ -1451,13 +1471,15 @@ td img {
 }
 
 .searchResult {
-    transform: translateX(15px);
+    max-height: 400px;
+    /* transform: translateX(25px); */
     border-radius: 5px;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .searchResult div a {
     color: var(--primary-color-red);
+    font-size: var(--font-size-normal-2);
 }
 
 .content-left div label {
@@ -1522,6 +1544,7 @@ body {
 .tableCart tbody tr td,
 .waitCart tbody tr td {
     padding: 10px 20px;
+    font-size: var(--font-size-normal-2);
 }
 
 .tableCart tbody tr:last-child td p {
@@ -1531,6 +1554,7 @@ body {
 .tableCart tbody tr:first-child th,
 .waitCart tbody tr:first-child th {
     padding: 10px 20px;
+    font-size: var(--font-size-normal-1);
 }
 
 .waitCart tbody tr td:nth-child(2) p {
@@ -1570,6 +1594,15 @@ body {
     display: none;
 }
 
+.navigation-bar-responsive div:first-child {
+    font-size: var(--font-size-normal-2);
+    color: white;
+}
+
+.navigation-bar-responsive div:first-child div {
+    margin-top: 5px;
+}
+
 .navigation-bar-responsive div {
     margin-bottom: 20px;
 }
@@ -1596,20 +1629,84 @@ body {
 .tableCart tbody tr td p {
     color: black !important;
 }
-.swal2-icon{
+
+.swal2-icon {
     box-sizing: content-box!important;
 }
-.navigation-bar-responsive{
+
+.navigation-bar-responsive {
     position: fixed;
     margin-right: -150px;
-    transition:cubic-bezier(.1,.24,0,.91) 1s;
+    transition: cubic-bezier(.1, .24, 0, .91) 1s;
 }
-.show{
+
+.show {
     margin-right: 0px!important;
 }
-.changeBorder{
+
+.changeBorder {
     border: 1px solid red!important;
 }
-.invisible{
+
+.invisible {
     display: none;
+}
+
+.header-navbar-logout {
+    cursor: pointer;
+}
+
+.contain-header .list-header a i.fa-solid.fa-bars {
+    color: white;
+}
+
+.choose-domain-responsive .list-header .icon-list i.fa-solid.fa-bars {
+    color: var(--color-list-header) !important;
+}
+
+.signup .field:first-child {
+    margin: 5px 0px;
+}
+
+.signup .field:nth-child(2) {
+    margin-top: 30px;
+}
+
+#warningEmail {
+    margin-top: 5px;
+}
+
+.signup span {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#phone,
+#tinh,
+#quan {
+    margin: 0px 0px 5px 0;
+    border-radius: 5px;
+    border: 1px solid;
+    display: block;
+}
+
+#dialog-1 label {
+    margin: 5px 0;
+    color: black !important;
+}
+
+.btn {
+    color: white;
+    background-color: var(--primary-color-red) !important;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.ui-widget-header {
+    background: unset !important;
+    background-color: var(--primary-color-red) !important;
 }

@@ -655,7 +655,7 @@
         display: block;
     }
     .icon-list {
-        color: white;
+        color: white !important;
     }
     .spinner {
         left: -300px;
@@ -824,6 +824,7 @@
     .icon-find {
         width: 29px;
         height: 29px;
+        transform: translateY(-1px);
     }
     .header-find .search {
         width: 100%;
@@ -997,6 +998,9 @@
     .return a i,
     .icon-phone i {
         font-size: 25px;
+    }
+    .navigation-bar-responsive .header-hotline {
+        margin-left: unset;
     }
 }
 
