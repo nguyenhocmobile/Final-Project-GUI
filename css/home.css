@@ -1621,10 +1621,10 @@ body {
     border: 1px solid red!important;
 }
 .invisible{
-    display: none;
+    display: none!important;
 }
-.visible{
-display: block;    
+.visiblee{
+display: block!important;    
 }
 .fa-xmark{
     color:red!important;

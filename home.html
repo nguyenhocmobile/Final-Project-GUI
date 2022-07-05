@@ -330,27 +330,26 @@
                     <!-- Form Đăng kí -->
                     <form action="#" class="signup">
                         <div class="field">
-                            <input id="js-RG_gmail" type="text" class="input-field" placeholder="Nhập vào gmail"
-                                required>
-                            <p id="warningEmail" class="invisible">Địa chỉ Email không hợp lệ</p>
+                            <input id="js-RG_gmail" type="text" class="input-field" placeholder="Nhập vào gmail" required>
+                            <i id="confirm-Email" class="fa-solid fa-check invisible"></i> <i id="errorEmail" class="fa-solid fa-xmark invisible"></i><p id="warningEmail" class="invisible">Địa chỉ Email không hợp lệ</p>
                         </div>
                         <div class="field">
-                            <input id="js-RG_account" type="text" class="input-field" placeholder="Tên đăng nhập"
-                                maxlength="24" required>
+                            <input id="js-RG_account" type="text" class="input-field" placeholder="Tên đăng nhập" maxlength="24" required>
+                            <i id="confirm-Account" class="fa-solid fa-check invisible"></i><i id="errorAccount" class="fa-solid fa-xmark invisible"></i><p id="warningAccount" class="invisible">Tên tài khoản không được để trống</p>
                         </div>
                         <div class="field">
-                            <input id="js-RG_password" type="password" class="input-field" placeholder="Nhập mật khẩu"
-                                maxlength="12" required>
+                            <input id="js-RG_password" type="password" class="input-field" placeholder="Nhập mật khẩu" maxlength="12" required>
+                            <i id="confirm-Password" class="fa-solid fa-check invisible"></i><i id="errorPasswork" class="fa-solid fa-xmark invisible"></i><p id="warningPasswork" class="invisible">Mật khẩu không được để trống</p>
                         </div>
                         <div class="field">
-                            <input id="js-RG_RePassword" type="password" class="input-field"
-                                placeholder="Nhập lại mật khẩu" maxlength="12" required>
+                            <input id="js-RG_RePassword" type="password" class="input-field" placeholder="Nhập lại mật khẩu" maxlength="12" required>
+                            <i id="confirm-RePassword" class="fa-solid fa-check invisible"></i><i id="errorRePasswork" class="fa-solid fa-xmark invisible"></i><p id="warningRePasswork" class="invisible">Nhập lại mật khẩu không được để trống</p>
                         </div>
                         <input id="js-RG_radio" type="checkbox" class="check-box"><span> Tôi đã đồng ý với
                             <a href="#">điều khoản</a> và <a href="#">dịch vụ</a>.</span>
                         <div class="field btn">
                             <div class="btn-layer"></div>
-                            <input id="js-btn-register" type="submit" value=" Đăng Ký">
+                            <input id="js-btn-register" type="submit" value=" Đăng Ký" >
                         </div>
                     </form>
                 </div>
@@ -380,7 +379,7 @@
         <select name="calc_shipping_provinces" id="tinh" required="">
             <option value="">Tỉnh / Thành phố</option>
         </select>
-        <br>
+       
         <label for="">Quận :</label>
         <select name="calc_shipping_district" id="quan" required="">
             <option value="">Quận / Huyện</option>
@@ -388,10 +387,9 @@
         <input class="billing_address_1" name="" type="hidden" value="">
         <input class="billing_address_2" name="" type="hidden" value="">
 
-        <br>
         <label for="" id="">Số điện thoại</label>
         <input type="text" name="" id="phone">
-        <button class="btn" onclick="selectItem()" style="background-color:red">click</button>
+        <button class="btn" onclick="selectItem()" style="background-color:red">Xong</button>
     </div>
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>

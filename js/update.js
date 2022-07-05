@@ -173,12 +173,18 @@ function refesh() {
   getwaitingcart();
   renderWaitCart();
 }
-
-function showNavigationBar() {
+function delaySlide(){
   let element = document.getElementById("navigation-bar-responsive");
-  let element2 = document.getElementById("blurSidebar")
-  element2.classList.toggle("visible")
   element.classList.toggle("show");
+}
+function delayBackGround(){
+  let element2 = document.getElementById("blurSidebar");
+  element2.classList.toggle("visiblee")
+}
+function showNavigationBar() {
+  let element2 = document.getElementById("blurSidebar");
+  element2.classList.toggle("visiblee")
+  setTimeout(delaySlide,0)
   
 }
 function cancel(){
@@ -186,9 +192,10 @@ function cancel(){
 }
 function hiddenSideBar(){
   let element = document.getElementById("navigation-bar-responsive");
-  let element2 = document.getElementById("blurSidebar")
-  element2.classList.toggle("visible")
   element.classList.toggle("show");
+  
+  setTimeout(delayBackGround,500)
+  
   event.stopPropagation();
 }
 function hotLine(){
