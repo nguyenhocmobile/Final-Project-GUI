@@ -62,7 +62,7 @@ function rendersearch(name) {
              </div>
              <p class="ten" style="font-weight: bolder;margin-top: 20px;">${listproduct[i].name}</p>
              <div class="gia">
-                  <span class="giagoc">${listproduct[i].price}</span>
+                  <span class="giagoc">${listproduct[i].price} đồng</span>
                </div>
                <button class="subtract" id="subtract" >-</button>
                <input type="number" readonly style="width:60px;" overflow:hidden; class="soluong" value="1">
@@ -91,7 +91,7 @@ function filterResult(array) {
                  </div>
                  <p class="ten" style="font-weight: bolder;margin-top: 20px;">${listproduct[i].name}</p>
                  <div class="gia">
-                      <span class="giagoc">${listproduct[i].price}</span>
+                      <span class="giagoc">${listproduct[i].price} đồng</span>
                    </div>
                    <button class="subtract" id="subtract" >-</button>
                    <input type="number" readonly style="width:60px;" overflow:hidden; class="soluong" value="1">

@@ -98,25 +98,34 @@ function gotoCart() {
   var r = document.getElementById("content-right");
   var ctn = document.getElementById("container-cart");
   var ctc = document.getElementById("content-cart");
- 
-  for(let element of m){
-    element.onclick = function () {
-      var x = document.getElementsByClassName("sas");
-      for (let j = 0; j < x.length; j++) {
-          x[j].classList.remove("nav-active");
+  var getusername = document.getElementById("js-Username");
+
+    for(let element of m){
+      element.onclick = function () {
+        var x = document.getElementsByClassName("sas");
+        if(getusername==null){
+          document.getElementById("dangnhap").style.visibility = "visible";
+          setTimeout(delay,0)
         }
-      l.style.display = "none";
-      r.style.display = "none";
-      ctn.style.display = "block";
-      ctc.style.display = "block";
-      setObjectCart();
-      renderCart();
-      deleteItemfromCart();
-      additem();
-      subtractitem();
-      renderWaitCart();
-    };
-  }
+        else{
+          for (let j = 0; j < x.length; j++) {
+            x[j].classList.remove("nav-active");
+          }
+        l.style.display = "none";
+        r.style.display = "none";
+        ctn.style.display = "block";
+        ctc.style.display = "block";
+        setObjectCart();
+        renderCart();
+        deleteItemfromCart();
+        additem();
+        subtractitem();
+        renderWaitCart();
+        }
+      };
+    }
+  
+ 
 }
 
 function renderCart() {
