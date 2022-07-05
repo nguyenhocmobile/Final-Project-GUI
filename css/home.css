@@ -1604,6 +1604,16 @@ body {
     margin-right: -150px;
     transition:cubic-bezier(.1,.24,0,.91) 1s;
 }
+#blurSidebar{
+  
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999!important;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
 .show{
     margin-right: 0px!important;
 }
@@ -1612,4 +1622,10 @@ body {
 }
 .invisible{
     display: none;
+}
+.visible{
+display: block;    
+}
+.fa-xmark{
+    color:red!important;
 }

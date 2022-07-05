@@ -176,5 +176,22 @@ function refesh() {
 
 function showNavigationBar() {
   let element = document.getElementById("navigation-bar-responsive");
+  let element2 = document.getElementById("blurSidebar")
+  element2.classList.toggle("visible")
   element.classList.toggle("show");
+  
+}
+function cancel(){
+  event.stopPropagation();
+}
+function hiddenSideBar(){
+  let element = document.getElementById("navigation-bar-responsive");
+  let element2 = document.getElementById("blurSidebar")
+  element2.classList.toggle("visible")
+  element.classList.toggle("show");
+  event.stopPropagation();
+}
+function hotLine(){
+  Swal.fire('Liên hệ với chúng tôi với hotLine:0376681323')
+
 }
