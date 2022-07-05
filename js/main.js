@@ -408,125 +408,14 @@ for(var j=0;j<hieuung.length;j++){
 }
 $('#js-RG_gmail').on('blur',function(){
   let warning =document.getElementById("warningEmail")
-  let confirmEmail =document.getElementById("confirm-Email")
  if(!$(this).val().includes("@")){
   $(this).addClass("changeBorder")
   warning.classList.remove("invisible")
-  confirmEmail.classList.add("invisible")
-
  }else{
   $(this).removeClass("changeBorder")
   warning.classList.add("invisible")
-  confirmEmail.classList.remove("invisible")
  }
 
-})
-$('#js-RG_gmail').on('blur',function(){
-  let warning =document.getElementById("warningEmail")
-  let confirmEmail =document.getElementById("confirm-Email")
-  let error =document.getElementById("errorEmail")
- if(!$(this).val().includes("@")){
-  $(this).addClass("changeBorder")
-  warning.classList.remove("invisible")
-  confirmEmail.classList.add("invisible")
-  error.classList.remove("invisible")
- }else{
-  $(this).removeClass("changeBorder")
-  warning.classList.add("invisible")
-  confirmEmail.classList.remove("invisible")
-  error.classList.add("invisible")
- }
-
-})
-// tk
-$('#js-RG_account').on('blur',function(){
-  let warning =document.getElementById("warningAccount")
-  let confirmEmail =document.getElementById("confirm-Account")
-  let error =document.getElementById("errorAccount")
- if(!$(this).val().trim()==""){
-  $(this).removeClass("changeBorder")
-  confirmEmail.classList.remove("invisible")
-  warning.classList.add("invisible")
-  error.classList.add("invisible")
- }else{
- 
-  $(this).addClass("changeBorder")
-  confirmEmail.classList.add("invisible")
-  warning.classList.remove("invisible")
-  error.classList.remove("invisible")
- }
-})
-//mk
-$('#js-RG_password').on('blur',function(){
-  let warning =document.getElementById("warningPasswork")
-  let confirmEmail =document.getElementById("confirm-Password")
-  let error =document.getElementById("errorPasswork")
- if(!$(this).val().trim()==""){
-  $(this).removeClass("changeBorder")
-  confirmEmail.classList.remove("invisible")
-  warning.classList.add("invisible")
-  error.classList.add("invisible")
- }else{
- 
-  $(this).addClass("changeBorder")
-  confirmEmail.classList.add("invisible")
-  warning.classList.remove("invisible")
-  error.classList.remove("invisible")
- }
-})
-// Re mk
-$('#js-RG_RePassword').on('blur',function(){
-  let warning =document.getElementById("warningRePasswork")
-  let confirmEmail =document.getElementById("confirm-RePassword")
-  let error =document.getElementById("errorRePasswork")
- if(!$(this).val().trim()==""){
-  $(this).removeClass("changeBorder")
-  confirmEmail.classList.remove("invisible")
-  warning.classList.add("invisible")
-  error.classList.add("invisible")
- }else{
- 
-  $(this).addClass("changeBorder")
-  confirmEmail.classList.add("invisible")
-  warning.classList.remove("invisible")
-  error.classList.remove("invisible")
- }
-})
-// Login tk
-$('#js-LG_account').on('blur',function(){
-  let warning =document.getElementById("warningAccountLG")
-  let confirmEmail =document.getElementById("confirm-AccountLG")
-  let error =document.getElementById("errorAccountLG")
- if(!$(this).val().trim()==""){
-  $(this).removeClass("changeBorder")
-  confirmEmail.classList.remove("invisible")
-  warning.classList.add("invisible")
-  error.classList.add("invisible")
- }else{
- 
-  $(this).addClass("changeBorder")
-  confirmEmail.classList.add("invisible")
-  warning.classList.remove("invisible")
-  error.classList.remove("invisible")
- }
-})
-// Login Mk
-$('#js-LG_password').on('blur',function(){
-  let warning =document.getElementById("warningPassworkLG")
-  let confirmEmail =document.getElementById("confirm-PasswordLG")
-  let error =document.getElementById("errorPassworkLG")
- if(!$(this).val().trim()==""){
-  $(this).removeClass("changeBorder")
-  confirmEmail.classList.remove("invisible")
-  warning.classList.add("invisible")
-  error.classList.add("invisible")
- }else{
- 
-  $(this).addClass("changeBorder")
-  confirmEmail.classList.add("invisible")
-  warning.classList.remove("invisible")
-  error.classList.remove("invisible")
- }
 })
 createAccount();
  getproduct();

@@ -83,7 +83,7 @@ function renderWaitCart() {
     if(item.status=='deny'){
       color='red'
     }else if(item.status=='Waiting'){
-      color='blue'
+      color='yellow'
     }
     return `<tr> <td>${
       index + 1
