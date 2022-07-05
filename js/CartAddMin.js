@@ -32,7 +32,7 @@ function renderCartAdmin() {
     }else if(item.status=='Waiting'){
       color='blue'
     }
-    return `<tr> <td>${item.username}</td> <td><p>${listwait}</p></td><td>${item.phone}</td><td>${item.address}</td><td style="color:${color}!important;">${item.status}</td> <td>${item.sumTotal} đồng</td> <td><a href="javascript:;" class="confirm" id="${index}" onclick="confirmCart()">Thao tác</a></td> </tr>`;
+    return `<tr> <td>${item.username}</td> <td><p>${listwait}</p></td><td>${item.phone}</td><td>${item.address}</td><td style="color:${color}!important;">${item.status}</td> <td>${item.sumTotal} đồng</td> <td><a href="javascript:;" class="confirm" id="${index}" onclick="confirmCart()">Xác nhận</a></td> </tr>`;
   });
   result += renderResult.toString().replace(/,/g, " ");
 
@@ -186,7 +186,7 @@ function renderProducts() {
       a.src
     }" alt="" srcset=""></th>  <th>${typp}</th> <th>${
       a.price
-    }</th> <th><a href="javascript:;" class="settingbutton ${b}">Sửa</a><a href="javascript:;" class="deletebutton ${b}" onclick="deleteProduct(${b})">Xóa</a></th></tr>`;
+    } đồng</th> <th><a href="javascript:;" class="settingbutton ${b}">Sửa</a><a href="javascript:;" class="deletebutton ${b}" onclick="deleteProduct(${b})">Xóa</a></th></tr>`;
   });
 
   result += mainArray.toString().replace(/,/g, " ");
@@ -228,8 +228,22 @@ function settingProducts() {
       $("#adjustButton").attr("class", `${this.className.substring(14)}`);
       $("#adjustButtonIII").attr("class", `${this.className.substring(14)}`);
       if(listproducts[i].type=='bonus'){
+        var name = document.getElementById("nameIII");
+        var price = document.getElementById("priceIII");
+      
+        var heso = document.getElementById("hesoIII");
+        name.value=listproducts[i].name;
+        price.value=listproducts[i].srcpice
+        heso.value=listproducts[i].heso
         $("#dialog-3").dialog("open");
       }else{
+        var name = document.getElementById("nameI");
+        var price = document.getElementById("priceI");
+        var type = document.getElementById("typeI");
+        name.value=listproducts[i].name;
+        price.value=listproducts[i].srcpice
+        type.value=listproducts[i].type
+
         $("#dialog-1").dialog("open");
       }
     };
