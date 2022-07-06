@@ -26,7 +26,7 @@ function register() {
 
     if (checkGmail) {
     
-      dong()
+     
       Swal.fire({
         icon: 'error',
         title: 'Lỗi đăng nhập',
@@ -34,7 +34,7 @@ function register() {
       })
     } else if (checkAcc) {
  
-      dong()
+     
       Swal.fire({
         icon: 'error',
         title: 'Lỗi đăng nhập',
@@ -46,7 +46,7 @@ function register() {
       if (!filter.test(gmail.value)) {
       
         gmail.focus;
-        dong()
+        
         Swal.fire({
           icon: 'error',
           title: 'Lỗi đăng nhập',
@@ -58,7 +58,7 @@ function register() {
       if (gmail.value.length == 0) {
      
         gmail.focus();
-        dong()
+   
         Swal.fire({
           icon: 'error',
           title: 'Lỗi đăng nhập',
@@ -70,7 +70,7 @@ function register() {
       if (username.value.length == 0) {
  
         username.focus();
-        dong()
+      
         Swal.fire({
           icon: 'error',
           title: 'Lỗi đăng nhập',
@@ -82,7 +82,7 @@ function register() {
       if (password.value.length == 0) {
     
         password.focus();
-        dong()
+    
         Swal.fire({
           icon: 'error',
           title: 'Lỗi đăng nhập',
@@ -94,7 +94,7 @@ function register() {
       if (REpassword.value != password.value) {
 
         REpassword.focus();
-        dong()
+   
         Swal.fire({
           icon: 'error',
           title: 'Lỗi đăng nhập',
@@ -105,11 +105,11 @@ function register() {
 
       if (!RadioOption.checked) {
     
-        dong()
+      
         Swal.fire({
           icon: 'error',
           title: 'Lỗi đăng nhập',
-          text: 'Bạn phải xác nhận chấp nhận điều khoảng của chúng tôi !',
+          text: 'Bạn phải xác nhận chấp nhận điều khoản của chúng tôi !',
         })
         return false;
       }
@@ -202,7 +202,7 @@ function login() {
 
     if (username.value.length === 0) {
       username.focus();
-      dong()
+     
       Swal.fire({
         icon: 'error',
         title: 'Lỗi đăng nhập',
@@ -215,7 +215,7 @@ function login() {
     if (password.value.length === 0) {
       
       password.focus();
-       dong()
+    
       Swal.fire({
         icon: 'error',
         title: 'Lỗi đăng nhập',
@@ -229,7 +229,7 @@ function login() {
     });
 
     if (!checkAcc) {
-      dong()
+    
       Swal.fire({
         icon: 'error',
         title: 'Lỗi đăng nhập',
@@ -270,7 +270,7 @@ function login() {
             userArray[i].username == username.value &&
             userArray[i].password != password.value
           ) {
-            dong()
+        
             Swal.fire({
               icon: 'error',
               title: 'Lỗi đăng nhập',

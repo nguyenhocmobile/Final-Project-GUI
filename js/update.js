@@ -188,8 +188,10 @@ function showNavigationBar() {
   
 }
 function cancel(){
-  event.stopPropagation();
+event.stopPropagation();
+
 }
+
 function hiddenSideBar(){
   let element = document.getElementById("navigation-bar-responsive");
   element.classList.toggle("show");
