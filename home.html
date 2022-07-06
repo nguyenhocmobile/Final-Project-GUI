@@ -28,8 +28,7 @@
     <header>
         <div class="contain-header">
             <div class="header-logo">
-                <a href="javascript:;" id="refesh" onclick="refesh()"> <img src="./Image/logooo.png" alt="#"
-                        class="img-logo"></a>
+                <a href="javascript:;" id="refesh" onclick="refesh()"> <img src="./Image/logooo.png" alt="#" class="img-logo"></a>
             </div>
             <div class="header-find">
 
@@ -109,7 +108,7 @@
                 <li class="nav-title"><a href="#content-right" class="sas" id="alone">COMBO 1 NGƯỜI</a></li>
                 <!--đổi phần này-->
                 <div class="more-nav" id="more-nav">
-                    <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                    <a href="#" id="icon-more"><i class="fas fa-ellipsis-h"></i></a>
                     <div class="box-more" id="box-more">
                         <li class="nav-title"><a href="#content-right" class="sas" id="couple">COMBO NHÓM</a></li>
                         <li class="nav-title"><a href="#content-right" class="sas" id="bonus">KHUYẾN MÃI</a></li>
@@ -156,7 +155,7 @@
             <div class="content-left" id="content-left">
                 <p id="nav-selected">Lọc</p>
                 <div class="">
-                    <label for="">Hãy chọn thuộc tính:</label>
+                    <label for="">Chọn loại món:</label>
                     <br>
                     <select name="searchType" id="searchType">
                         <option value="">Tất cả</option>
@@ -309,12 +308,10 @@
                 <div class="form-inner">
                     <form action="#" class="login">
                         <div class="field">
-                            <input id="js-LG_account" type="text" class="input-field" placeholder="Tên Đăng Nhập"
-                                maxlength="24" required>
+                            <input id="js-LG_account" type="text" class="input-field" placeholder="Tên Đăng Nhập" maxlength="24" required>
                         </div>
                         <div class="field">
-                            <input id="js-LG_password" type="password" class="input-field" placeholder="Mật khẩu"
-                                maxlength="12" required>
+                            <input id="js-LG_password" type="password" class="input-field" placeholder="Mật khẩu" maxlength="12" required>
                         </div>
                         <div class="pass-link">
                             <a href="#">Quên Mật Khẩu?</a>
@@ -331,25 +328,29 @@
                     <form action="#" class="signup">
                         <div class="field">
                             <input id="js-RG_gmail" type="text" class="input-field" placeholder="Nhập vào gmail" required>
-                            <i id="confirm-Email" class="fa-solid fa-check invisible"></i> <i id="errorEmail" class="fa-solid fa-xmark invisible"></i><p id="warningEmail" class="invisible">Địa chỉ Email không hợp lệ</p>
+                            <i id="confirm-Email" class="fa-solid fa-check invisible"></i> <i id="errorEmail" class="fa-solid fa-xmark invisible"></i>
+                            <p id="warningEmail" class="invisible">Địa chỉ Email không hợp lệ</p>
                         </div>
                         <div class="field">
                             <input id="js-RG_account" type="text" class="input-field" placeholder="Tên đăng nhập" maxlength="24" required>
-                            <i id="confirm-Account" class="fa-solid fa-check invisible"></i><i id="errorAccount" class="fa-solid fa-xmark invisible"></i><p id="warningAccount" class="invisible">Tên tài khoản không được để trống</p>
+                            <i id="confirm-Account" class="fa-solid fa-check invisible"></i><i id="errorAccount" class="fa-solid fa-xmark invisible"></i>
+                            <p id="warningAccount" class="invisible">Tên tài khoản không được để trống</p>
                         </div>
                         <div class="field">
                             <input id="js-RG_password" type="password" class="input-field" placeholder="Nhập mật khẩu" maxlength="12" required>
-                            <i id="confirm-Password" class="fa-solid fa-check invisible"></i><i id="errorPasswork" class="fa-solid fa-xmark invisible"></i><p id="warningPasswork" class="invisible">Mật khẩu không được để trống</p>
+                            <i id="confirm-Password" class="fa-solid fa-check invisible"></i><i id="errorPasswork" class="fa-solid fa-xmark invisible"></i>
+                            <p id="warningPasswork" class="invisible">Mật khẩu không được để trống</p>
                         </div>
                         <div class="field">
                             <input id="js-RG_RePassword" type="password" class="input-field" placeholder="Nhập lại mật khẩu" maxlength="12" required>
-                            <i id="confirm-RePassword" class="fa-solid fa-check invisible"></i><i id="errorRePasswork" class="fa-solid fa-xmark invisible"></i><p id="warningRePasswork" class="invisible">Nhập lại mật khẩu không được để trống</p>
+                            <i id="confirm-RePassword" class="fa-solid fa-check invisible"></i><i id="errorRePasswork" class="fa-solid fa-xmark invisible"></i>
+                            <p id="warningRePasswork" class="invisible">Nhập lại mật khẩu không được để trống</p>
                         </div>
                         <input id="js-RG_radio" type="checkbox" class="check-box"><span> Tôi đã đồng ý với
                             <a href="#">điều khoản</a> và <a href="#">dịch vụ</a>.</span>
                         <div class="field btn">
                             <div class="btn-layer"></div>
-                            <input id="js-btn-register" type="submit" value=" Đăng Ký" >
+                            <input id="js-btn-register" type="submit" value=" Đăng Ký">
                         </div>
                     </form>
                 </div>
@@ -379,7 +380,7 @@
         <select name="calc_shipping_provinces" id="tinh" required="">
             <option value="">Tỉnh / Thành phố</option>
         </select>
-       
+
         <label for="">Quận :</label>
         <select name="calc_shipping_district" id="quan" required="">
             <option value="">Quận / Huyện</option>
@@ -404,58 +405,58 @@
     <script>
         //<![CDATA[
         if (address_2 = localStorage.getItem('address_2_saved')) {
-            $('select[name="calc_shipping_district"] option').each(function () {
+            $('select[name="calc_shipping_district"] option').each(function() {
                 if ($(this).text() == address_2) {
                     $(this).attr('selected', '')
                 }
             })
             $('input.billing_address_2').attr('value', address_2)
         }
-        $('select[name="calc_shipping_provinces"]').each(function () {
-            var $this = $(this),
-                stc = ''
-            c.forEach(function (i, e) {
-                e += +1
-                stc += '<option value=' + e + '>' + i + '</option>'
-                $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
-                if (address_1 = localStorage.getItem('address_1_saved')) {
-                    $('select[name="calc_shipping_provinces"] option').each(function () {
-                        if ($(this).text() == address_1) {
-                            $(this).attr('selected', '')
+        $('select[name="calc_shipping_provinces"]').each(function() {
+                var $this = $(this),
+                    stc = ''
+                c.forEach(function(i, e) {
+                    e += +1
+                    stc += '<option value=' + e + '>' + i + '</option>'
+                    $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+                    if (address_1 = localStorage.getItem('address_1_saved')) {
+                        $('select[name="calc_shipping_provinces"] option').each(function() {
+                            if ($(this).text() == address_1) {
+                                $(this).attr('selected', '')
+                            }
+                        })
+                        $('input.billing_address_1').attr('value', address_1)
+                    }
+                    $this.on('change', function(i) {
+                        i = $this.children('option:selected').index() - 1
+                        var str = '',
+                            r = $this.val()
+                        if (r != '') {
+                            arr[i].forEach(function(el) {
+                                str += '<option value="' + el + '">' + el + '</option>'
+                                $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+                            })
+                            var address_1 = $this.children('option:selected').text()
+
+
+
+                            $('select[name="calc_shipping_district"]').on('change', function() {
+                                var target = $(this).children('option:selected')
+                                target.attr('selected', '')
+                                $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                                var address_2 = target.text()
+                                $('input.billing_address_2').attr('value', address_2)
+
+
+                            })
                         }
                     })
-                    $('input.billing_address_1').attr('value', address_1)
-                }
-                $this.on('change', function (i) {
-                    i = $this.children('option:selected').index() - 1
-                    var str = '',
-                        r = $this.val()
-                    if (r != '') {
-                        arr[i].forEach(function (el) {
-                            str += '<option value="' + el + '">' + el + '</option>'
-                            $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
-                        })
-                        var address_1 = $this.children('option:selected').text()
-
-
-
-                        $('select[name="calc_shipping_district"]').on('change', function () {
-                            var target = $(this).children('option:selected')
-                            target.attr('selected', '')
-                            $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
-                            var address_2 = target.text()
-                            $('input.billing_address_2').attr('value', address_2)
-
-
-                        })
-                    }
                 })
             })
-        })
             //]]>
     </script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             const d = new Date();
             let hour = d.getHours();
 
@@ -465,11 +466,11 @@
             $("#dialog-1").dialog({
                 autoOpen: false,
             })
-            
-            let m= document.querySelectorAll(".ui-icon-closethick")
-                for(let element of m){
-                    element.className="fa-solid fa-xmark"
-                }
+
+            let m = document.querySelectorAll(".ui-icon-closethick")
+            for (let element of m) {
+                element.className = "fa-solid fa-xmark"
+            }
 
         });
     </script>

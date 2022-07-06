@@ -222,7 +222,7 @@
 }
 
 .settingbutton {
-    margin-right: 5px;
+    margin-right: 20px;
 }
 
 #adjustButton,
@@ -260,6 +260,7 @@
 #typeI {
     border-radius: 5px;
     border: 1px solid;
+    padding: 5px;
 }
 
 
