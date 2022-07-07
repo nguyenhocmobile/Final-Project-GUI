@@ -227,7 +227,8 @@
 
 #adjustButton,
 #adjustButtonIV,
-#adjustButtonI {
+#adjustButtonI,
+#adjustButtonIII {
     padding: 4px 7px;
     border-radius: 10px;
     color: white;
@@ -239,7 +240,8 @@
 
 #dialog-1 label,
 #dialog-4 label,
-#dialog-2 label {
+#dialog-2 label,
+#dialog-3 label {
     margin: 5px 0px;
 }
 
@@ -257,7 +259,10 @@
 #typeII,
 #nameI,
 #priceI,
-#typeI {
+#typeI,
+#nameIII,
+#priceIII,
+#hesoIII {
     border-radius: 5px;
     border: 1px solid;
     padding: 5px;

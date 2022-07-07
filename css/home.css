@@ -16,7 +16,8 @@ html {
     --font-size-normal-5: 12px;
     --transition-effect: 0.25s cubic-bezier(.25, -0.59, .82, 1.78);
     --transition-delay: 0.3s;
-    --mode: url(https://cdn.glitch.me/6fb38134-4189-4c1f-b07d-959eb5322770%2Ficonyae.png?v=1639155596339);
+    /* --mode: url(https://cdn.glitch.me/6fb38134-4189-4c1f-b07d-959eb5322770%2Ficonyae.png?v=1639155596339); */
+    --mode: url("../Image/sun.png");
     --primary-color-red: rgb(221, 0, 0);
     --background-color: white;
     --color-active: black;
@@ -37,6 +38,7 @@ html {
     --color-icon-more: rgb(221, 0, 0);
     --color-box-more: white;
     --color-list-header: rgb(221, 0, 0);
+    --background-toggle: white;
 }
 
 .hidden {
@@ -51,7 +53,8 @@ html {
 
 .darkmode {
     --primary-color-red: #9e062e;
-    --mode: url(https://cdn.glitch.me/6fb38134-4189-4c1f-b07d-959eb5322770%2Fhutaoicon.png?v=1639155606712);
+    /* --mode: url(https://cdn.glitch.me/6fb38134-4189-4c1f-b07d-959eb5322770%2Fhutaoicon.png?v=1639155606712); */
+    --mode: url(../Image/moon1.png);
     --background-color: #202020;
     --color-active: white;
     --color-non-active: black;
@@ -1293,11 +1296,14 @@ td img {
 #check {
     /* width: 90px;
     height: 50px; */
-    width: 30px;
+    width: 35px;
     height: 20px;
     appearance: none;
-    background-color: rgba(250, 66, 173, 0.849);
+    /* background-color: rgb(250, 66, 173); */
+    background-color: rgb(184, 33, 33);
+    /* background-color: rgb(104, 56, 56); */
     border-radius: 25px;
+    border: 1px solid white;
     position: relative;
     cursor: pointer;
     box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.3);
@@ -1329,7 +1335,7 @@ td img {
 }
 
 #check:checked::before {
-    left: 13px;
+    left: 16px;
 }
 
 #dangnhap {
@@ -1795,9 +1801,18 @@ body {
 }
 
 .swal2-container {
-    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999!important;
+    z-index: 9999999999!important;
 }
 
 .form-inner form .pass-link {
     margin-top: 30px;
 }
+
+#js-Username {
+    margin: 0 0 10px 0;
+}
+
+
+/* p {
+    margin: 0 !important;
+} */

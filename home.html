@@ -283,8 +283,8 @@
             </div>
         </a>
     </div>
-    <div class="form-login" id="dangnhap" onclick="dong()">
-        <div class="container" id="login-ctn" onclick="cancel()">
+    <div class="form-login" id="dangnhap" onmousedown="dong()">
+        <div class="container" id="login-ctn" onmousedown="cancel()">
             <!-- close btn -->
             <div class="" onclick="dong()">
                 <i class="fas fa-times"></i>
@@ -308,12 +308,14 @@
                 <div class="form-inner">
                     <form action="#" class="login" novalidate>
                         <div class="field">
-                            <input id="js-LG_account" type="text" class="input-field" placeholder="Tên Đăng Nhập" maxlength="24" required >
-                            <i id="confirm-AccountLG" class="fa-solid fa-check invisible"></i><i id="errorAccountLG" class="fa-solid fa-xmark invisible"></i><p id="warningAccountLG" class="invisible">Tên tài khoản không được để trống</p>
+                            <input id="js-LG_account" type="text" class="input-field" placeholder="Tên Đăng Nhập" maxlength="24" required>
+                            <i id="confirm-AccountLG" class="fa-solid fa-check invisible"></i><i id="errorAccountLG" class="fa-solid fa-xmark invisible"></i>
+                            <p id="warningAccountLG" class="invisible">Tên tài khoản không được để trống</p>
                         </div>
                         <div class="field">
                             <input id="js-LG_password" type="password" class="input-field" placeholder="Mật khẩu" maxlength="12" required>
-                            <i id="confirm-PasswordLG" class="fa-solid fa-check invisible"></i><i id="errorPassworkLG" class="fa-solid fa-xmark invisible"></i><p id="warningPassworkLG" class="invisible">Mật khẩu không được để trống</p>
+                            <i id="confirm-PasswordLG" class="fa-solid fa-check invisible"></i><i id="errorPassworkLG" class="fa-solid fa-xmark invisible"></i>
+                            <p id="warningPassworkLG" class="invisible">Mật khẩu không được để trống</p>
                         </div>
                         <div class="pass-link">
                             <a href="#">Quên Mật Khẩu?</a>
