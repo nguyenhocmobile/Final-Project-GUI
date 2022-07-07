@@ -313,6 +313,7 @@ function login() {
                         subtractitem();
                         getwaitingcart();
                         renderWaitCart();
+                        deleteItemWaiCart()
                         Handle_LogOut();
                     }
                 }

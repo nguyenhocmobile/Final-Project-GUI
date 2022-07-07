@@ -172,6 +172,7 @@ function refesh() {
   subtractitem();
   getwaitingcart();
   renderWaitCart();
+  deleteItemWaiCart()
 }
 function delaySlide(){
   let element = document.getElementById("navigation-bar-responsive");
