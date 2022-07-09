@@ -53,6 +53,7 @@ function pushItem() {
     additem();
     subtractitem();
     renderWaitCart();
+    deleteItemWaiCart()
 }
 
 function renderWaitCart() {
@@ -70,6 +71,7 @@ function renderWaitCart() {
   <th>Địa chỉ</th>
   <th>Số điện thoại</th>
   <th>Trạng thái</th>
+  <th>Thao tác</th> 
 </tr>`;
 
     var findItem = listwaitingitem.filter(function(item) {
@@ -87,7 +89,7 @@ function renderWaitCart() {
         }
         return `<tr> <td>${
       index + 1
-    }</td> <td><p>${k}</p></td> <td>${item.sumTotal} đồng</td><td>${item.address}</td><td>${item.phone}</td> <td style="color:${color}!important;">${item.status}</td> </tr>`;
+    }</td> <td><p>${k}</p></td> <td>${item.sumTotal} đồng</td><td>${item.address}</td><td>${item.phone}</td> <td style="color:${color}!important;">${item.status}</td> <td><a href="javascript:;" class="fa-solid fa-delete-left deleteWaitCart"></a></td></tr>`;
     });
 
     result += renderItem.toString().replace(/,/g, " ");
@@ -143,5 +145,46 @@ function selectItem() {
 
 
 }
+function deleteItemWaiCart(){
+    let getindex = document.getElementsByClassName("deleteWaitCart")
+    var getusername;
+    if (document.getElementById("js-Username")) {
+        getusername = document.getElementById("js-Username")
+    } else {
+        getusername = 'no login'
+    }
+    var listwaitingitem = JSON.parse(localStorage.getItem("waitItem"));
+    var indexWaitCart= listwaitingitem.map((a,b)=>{
+        return {item:a,index:b}
+    })
+    var findItem = indexWaitCart.filter(function(e) {
+        return e.item.username === getusername.innerText;
+    });
+    for(let i=0;i<getindex.length;i++){
+        getindex[i].onclick = function(){
+            Swal.fire({
+                title: 'Bạn chắc chắn muốn hủy đơn hàng này?',
+            
+                showCancelButton: true,
+                cancelButtonText:'Không',
+                confirmButtonText: 'Có',
+                
+              }).then((result) => {
+           
+                if (result.isConfirmed) {
+                    listwaitingitem.splice(parseInt(findItem[i].index),1)
+                    localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
+                    renderWaitCart()
+                    deleteItemWaiCart()
+                  Swal.fire('Đơn hàng đã được hủy!', '', 'success')
+                }
+              })
+  
+        }
+    }
+
+    
+}
 getwaitingcart();
 renderWaitCart();
+deleteItemWaiCart()

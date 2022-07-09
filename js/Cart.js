@@ -121,6 +121,7 @@ function gotoCart() {
         additem();
         subtractitem();
         renderWaitCart();
+        deleteItemWaiCart();
         }
       };
     }
