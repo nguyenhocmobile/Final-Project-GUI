@@ -73,7 +73,6 @@ function renderWaitCart() {
   <th>Trạng thái</th>
   <th>Thao tác</th> 
 </tr>`;
-
     var findItem = listwaitingitem.filter(function(item) {
         return item.username === getusername.innerText;
     });
@@ -89,7 +88,14 @@ function renderWaitCart() {
         }
         return `<tr> <td>${
       index + 1
-    }</td> <td><p>${k}</p></td> <td>${item.sumTotal} đồng</td><td>${item.address}</td><td>${item.phone}</td> <td style="color:${color}!important;">${item.status}</td> <td><a href="javascript:;" class="fa-solid fa-delete-left deleteWaitCart"></a></td></tr>`;
+    }</td> 
+    <td><p>${k}</p></td> 
+    <td>${item.sumTotal} đồng</td>
+    <td>${item.address}</td>
+    <td>${item.phone}</td> 
+    <td style="color:${color}!important;">${item.status}</td> 
+    <td><a href="javascript:;" class="fa-solid fa-delete-left deleteWaitCart"></a></td>
+    </tr>`;
     });
 
     result += renderItem.toString().replace(/,/g, " ");
@@ -110,7 +116,7 @@ function setUp() {
 
         if (result.isConfirmed) {
             $("#dialog-1").dialog("open");
-            // pushItem()
+          
 
         }
     })
@@ -126,23 +132,18 @@ function selectItem() {
         pushItem()
         $("#dialog-1").dialog("close");
         Swal.fire(
-            'Agree!',
+            'Thành công!',
             'Đơn hàng của bạn đã được lưu, vui lòng chờ người quản lí xác nhận',
             'success'
         )
     } else {
         $("#dialog-1").dialog("close");
         Swal.fire(
-            'Disagree!',
+            'Không thành công!',
             'Dữ liệu không hợp lệ',
             'warning'
         )
     }
-
-
-
-
-
 
 }
 function deleteItemWaiCart(){
@@ -172,18 +173,19 @@ function deleteItemWaiCart(){
               }).then((result) => {
            
                 if (result.isConfirmed) {
+                   if(findItem[i].item.status!='Accept'){
                     listwaitingitem.splice(parseInt(findItem[i].index),1)
                     localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
                     renderWaitCart()
                     deleteItemWaiCart()
                   Swal.fire('Đơn hàng đã được hủy!', '', 'success')
+                   }else{
+                    Swal.fire('Đơn hàng đã được hệ thống xác nhận, không thể hủy!', '', 'warning')
+                   }
                 }
               })
-  
         }
     }
-
-    
 }
 getwaitingcart();
 renderWaitCart();

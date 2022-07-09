@@ -126,7 +126,7 @@ function register() {
             Swal.fire({
 
                 icon: 'success',
-                title: 'Your work has been saved',
+                title: 'Thành công',
                 text: "Đăng kí tài khoản thành công !\n Chúc bạn mua sắm vui vẻ",
                 showConfirmButton: false,
                 timer: 1500

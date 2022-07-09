@@ -235,17 +235,6 @@ function additem() {
             valueGetCart[i].price =
               parseInt(valueGetCart[i].value) *
               parseInt(valueGetCart[i].priceforone);
-            // var item = {
-            //   name: valueGetCart[i].name,
-            //   value: valueGetCart[i].value,
-            //   img: valueGetCart[i].img,
-            //   price: valueGetCart[i].price,
-            //   priceforone: valueGetCart[i].priceforone,
-            //   status: valueGetCart[i].status,
-            //   username: valueGetCart[i].username,
-            // };
-            // valueGetCart.splice(i, 1);
-            //valueGetCart.setItem(item)
           }
         }
       }

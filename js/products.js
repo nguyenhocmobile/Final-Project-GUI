@@ -95,49 +95,12 @@ function changeTab() {
    
       document.getElementById("content-right").innerHTML = "";
       switch (i) {
-        case 0:
-          render("odd dish");
-          setObjectCart();
-          addValue();
-          subtractValue();
-
-          break;
-        case 1:
-          render("ice cream");
-          setObjectCart();
-          addValue();
-          subtractValue();
-
-          break;
-        case 2:
-          render("alone");
-          setObjectCart();
-          addValue();
-
-          subtractValue();
-
-          break;
-        case 3:
-          render("couple");
-          setObjectCart();
-          addValue();
-          subtractValue();
-
-          break;
-          case 4:
-          render("bonus");
-          setObjectCart();
-          addValue();
-          subtractValue();
-
-          break;
-          case 5:
-            render("water")
-            setObjectCart();
-            addValue();
-            subtractValue();
-          
-            break;
+        case 0:render("odd dish");setObjectCart();addValue(); subtractValue();break;
+        case 1:render("ice cream");setObjectCart();addValue();subtractValue();break;
+        case 2:render("alone");setObjectCart();addValue();subtractValue();break;
+        case 3:render("couple");setObjectCart();addValue();subtractValue();break;
+        case 4:render("bonus");setObjectCart();addValue();subtractValue();break;
+        case 5:render("water");setObjectCart();addValue();subtractValue();break;
       }
     };
   }
