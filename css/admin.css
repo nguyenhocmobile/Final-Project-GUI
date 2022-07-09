@@ -272,3 +272,7 @@
 /* .ui-state-default .ui-icon {
     background: unset;
 } */
+.ui-dialog{
+    top: -10%!important;
+    left: 0!important;
+}

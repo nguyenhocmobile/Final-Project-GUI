@@ -151,10 +151,21 @@ function filter() {
 }
 
 function showbonus() {
+  getproduct();
   render("bonus");
-  setObjectCart();
+  changeTab();
   addValue();
   subtractValue();
+  createCart();
+  gotoCart();
+  setObjectCart();
+  renderCart();
+  deleteItemfromCart();
+  additem();
+  subtractitem();
+  getwaitingcart();
+  renderWaitCart();
+  deleteItemWaiCart()
 }
 
 function refesh() {
