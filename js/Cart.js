@@ -196,7 +196,6 @@ function deleteItemfromCart() {
         text: "Bạn có chắc chắn muốn xóa món hàng này?",
         icon: 'warning',
         showCancelButton: true,
-        cancelButtonText:'Không',
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Đồng ý',
