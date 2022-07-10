@@ -152,6 +152,14 @@ function filter() {
 
 function showbonus() {
   getproduct();
+  var l = document.getElementById("content-left");
+  var r = document.getElementById("content-right");
+  var ctn = document.getElementById("container-cart");
+  var ctc = document.getElementById("content-cart");
+  l.style.display = "block";
+  r.style.display = "flex";
+  ctn.style.display = "flex";
+  ctc.style.display = "none";
   render("bonus");
   changeTab();
   addValue();

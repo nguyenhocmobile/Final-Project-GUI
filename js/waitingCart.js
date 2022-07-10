@@ -71,7 +71,7 @@ function renderWaitCart() {
   <th>Địa chỉ</th>
   <th>Số điện thoại</th>
   <th>Trạng thái</th>
-  <th>Hủy đơn</th> 
+  <th>Thao tác</th> 
 </tr>`;
     var findItem = listwaitingitem.filter(function(item) {
         return item.username === getusername.innerText;
@@ -94,12 +94,10 @@ function renderWaitCart() {
     <td>${item.address}</td>
     <td>${item.phone}</td> 
     <td style="color:${color}!important;">${item.status}</td> 
-    
-    <td><a href="javascript:;" class="deleteWaitCart">Hủy</a></td>
+    <td><a href="javascript:;" class="fa-solid fa-rectangle-xmark deleteWaitCart"></a></td>
     </tr>`;
     });
 
-    // <td><a href="javascript:;" class="fa-solid fa-delete-left deleteWaitCart"></a></td>
     result += renderItem.toString().replace(/,/g, " ");
 
     document.getElementById("waitCart").innerHTML = result;
@@ -118,7 +116,7 @@ function setUp() {
 
         if (result.isConfirmed) {
             $("#dialog-1").dialog("open");
-
+          
 
         }
     })
@@ -148,8 +146,7 @@ function selectItem() {
     }
 
 }
-
-function deleteItemWaiCart() {
+function deleteItemWaiCart(){
     let getindex = document.getElementsByClassName("deleteWaitCart")
     var getusername;
     if (document.getElementById("js-Username")) {
@@ -158,35 +155,37 @@ function deleteItemWaiCart() {
         getusername = 'no login'
     }
     var listwaitingitem = JSON.parse(localStorage.getItem("waitItem"));
-    var indexWaitCart = listwaitingitem.map((a, b) => {
-        return { item: a, index: b }
+    var indexWaitCart= listwaitingitem.map((a,b)=>{
+        return {item:a,index:b}
     })
     var findItem = indexWaitCart.filter(function(e) {
         return e.item.username === getusername.innerText;
     });
-    for (let i = 0; i < getindex.length; i++) {
-        getindex[i].onclick = function() {
+    for(let i=0;i<getindex.length;i++){
+        getindex[i].onclick = function(){
             Swal.fire({
                 title: 'Bạn chắc chắn muốn hủy đơn hàng này?',
-
+                icon:'warning',
                 showCancelButton: true,
-                cancelButtonText: 'Không',
+                cancelButtonText:'Không',
                 confirmButtonText: 'Có',
-
-            }).then((result) => {
-
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                
+              }).then((result) => {
+           
                 if (result.isConfirmed) {
-                    if (findItem[i].item.status != 'Accept') {
-                        listwaitingitem.splice(parseInt(findItem[i].index), 1)
-                        localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
-                        renderWaitCart()
-                        deleteItemWaiCart()
-                        Swal.fire('Đơn hàng đã được hủy!', '', 'success')
-                    } else {
-                        Swal.fire('Đơn hàng đã được hệ thống xác nhận, không thể hủy!', '', 'warning')
-                    }
+                   if(findItem[i].item.status!='Accept'){
+                    listwaitingitem.splice(parseInt(findItem[i].index),1)
+                    localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
+                    renderWaitCart()
+                    deleteItemWaiCart()
+                  Swal.fire('Đơn hàng đã được hủy!', '', 'success')
+                   }else{
+                    Swal.fire('Đơn hàng đã được hệ thống xác nhận, không thể hủy!', '', 'warning')
+                   }
                 }
-            })
+              })
         }
     }
 }

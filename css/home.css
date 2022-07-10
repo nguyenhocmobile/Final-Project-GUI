@@ -39,7 +39,6 @@ html {
     --color-box-more: white;
     --color-list-header: rgb(221, 0, 0);
     --background-toggle: white;
-    --color-text-cancel: #9e062e;
 }
 
 .hidden {
@@ -67,7 +66,6 @@ html {
     --color-icon-more: white;
     --color-box-more: #202020;
     --color-list-header: white;
-    --color-text-cancel: rgb(221, 0, 0);
 }
 
 body {
@@ -1325,7 +1323,7 @@ td img {
     background-size: cover;
     background-image: var(--mode);
     border-radius: 50%;
-    top: 2px;
+    top: 3px;
     left: 3px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
     transition: var(--transition-effect);
@@ -1499,17 +1497,8 @@ td img {
     border-collapse: collapse;
 }
 
-.waitCart tbody tr td a {
-    border-collapse: collapse;
-    color: var(--primary-color-red);
-}
-
 .waitCart tbody tr td:last-child {
     color: #009DDC !important;
-}
-
-.waitCart tbody tr td:nth-child(2) p {
-    margin-bottom: 0px;
 }
 
 .searchResult {
@@ -1823,11 +1812,12 @@ body {
     margin: 0 0 10px 0;
 }
 
-.deleteWaitCart:hover {
-    color: var(--color-text-cancel);
+.fa-rectangle-xmark{
+    color: var(--primary-color-red);
 }
-
-
+#searchType{
+    text-align: center;
+}
 /* p {
     margin: 0 !important;
 } */
