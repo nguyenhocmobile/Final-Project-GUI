@@ -19,69 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Admin</title>
     <style>
-        /* .listCart{
-          width: 400px;
-            height: 300px;
-          overflow-y: scroll;
-            overflow-x: scroll;
-        } */
-        /* .listAccount{
-            background-color: black;
-        } */
-        
-        .dadTheOrder,
-        .dadListAccount {
-            height: 300px;
-            overflow-y: scroll;
-        }
-        
-        .HeadTheOrder th {
-            padding: 40px;
-        }
-        
-        .HeadListAccount th {
-            padding: 15px;
-        }
-        
-        .maincontainer {
-            display: flex;
-        }
-        
-        .cartContainer {
-            width: 400px;
-        }
-        
-        .listTheOrder {
-            width: 100%;
-            text-align: center;
-        }
-        
-        .listTheOrder tr td {
-            border: 1px solid black;
-        }
-        /* .listCart{
-            background-color: blue;
-        } */
-        
-        .addCart {
-            float: right;
-        }
-        
-        .listaccount td,
-        .listprodurt th,
-        .listprodurt td {
-            padding: 30px;
-            border: 1px solid black;
-        }
-        
-        .ui-dialog {
-            position: fixed;
-            margin-left: 40%;
-            margin-top: 20%;
-        }
-        .fa-xmark{
-            color:red!important;
-        }
+
     </style>
     <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -130,8 +68,8 @@
     </div>
     <div class="cartContainer">
         <div class="buttonCart">
-            <button class="addCart" id="addCart" onclick="openAdd()">Thêm món hàng</button>
-            <button class="addBonusCart" id="addBonusCart" onclick="openBonusAdd()">Thêm hàng khuyến mãi</button>
+            <button class="addCart" id="addCart" onclick="openAdd()">Thêm sản phẩm</button>
+            <button class="addBonusCart" id="addBonusCart" onclick="openBonusAdd()">Thêm sản phẩm khuyến mãi</button>
         </div>
         <div class="container-product">
             <div class="listCart" id="listCart">
@@ -182,31 +120,8 @@
         </div>
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js">
         </script>
-        <script>
-            $(function() {
-                $("#dialog-1").dialog({
-                    autoOpen: false,
-                });
-                $("#dialog-2").dialog({
-                    autoOpen: false,
-                })
-                $("#dialog-3").dialog({
-                    autoOpen: false,
-                })
-                $("#dialog-4").dialog({
-                    autoOpen: false,
-                })
-                let m= document.querySelectorAll(".ui-icon-closethick")
-                for(let element of m){
-                    element.className="fa-solid fa-xmark"
-                }
-            });
-        </script>
         <script src="js/CartAddMin.js">
         </script>
-
-
-
 </body>
 
 </html>

@@ -33,8 +33,6 @@ function register() {
                 text: 'Đã có có người sử dụng gmail này để đăng kí !\n Vui lòng sử dụng gmail khác !',
             })
         } else if (checkAcc) {
-
-
             Swal.fire({
                 icon: 'error',
                 title: 'Lỗi đăng ký',
@@ -124,7 +122,6 @@ function register() {
             userArray.push(user);
             localStorage.setItem("user", JSON.stringify(userArray));
             Swal.fire({
-
                 icon: 'success',
                 title: 'Thành công',
                 text: "Đăng kí tài khoản thành công !\n Chúc bạn mua sắm vui vẻ",

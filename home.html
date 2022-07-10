@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crispy Chicken</title>
-    <link rel="shortcut icon" type="image/png" href="https://food89.vn/data/pcat/icon/ga-nhap-khau.png" />
+    <link rel="shortcut icon" type="image/png" href="Image/logoweb.png" />
     <link rel="stylesheet" href="css/bootstrap4.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -62,7 +62,6 @@
                     <input id="check" type="checkbox" name="">
                 </div>
             </div>
-
             <div class="list-header">
                 <a href="javascript:;" class="icon-list" onclick="showNavigationBar()">
                     <i class="fa-solid fa-bars"></i>
@@ -77,16 +76,6 @@
     </header>
     <div class="main-container">
         <div class="choose-domain-responsive">
-            <!-- <div class="change-domain">
-                <p>Khu vực của bạn:
-                    <a><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</a>
-                    <a href="#">Thay đổi</a>
-                </p>
-                <p>
-                    <a><i class="fas fa-map-marker-alt"></i> Miền Nam - Miền Trung</a>
-                    <a href="#">Thay đổi</a>
-                </p>
-            </div> -->
             <div class="list-header">
                 <a href="javascipt:;" class="icon-list" onclick="showNavigationBar()">
                     <i class="fa-solid fa-bars"></i>
@@ -119,7 +108,6 @@
         </div>
         <div class="content-review">
             <div id="demo" class="carousel slide" data-ride="carousel">
-
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
                     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -139,7 +127,6 @@
                         <img src="Image/foodreview3.png" alt="New York">
                     </div>
                 </div>
-
                 <!-- Left and right controls -->
                 <a class="carousel-control-prev" href="#demo" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
@@ -230,34 +217,6 @@
                     <p>1900.63.39.09 (Bấm phím 2)</p>
                 </a>
             </div>
-            <!-- <div class="footer-col">
-                <h3>HỆ THỐNG CỬA HÀNG</h3>
-                <div class="domain">
-                    <input type="radio" id="mienbac" value="Miền Bắc">
-                    <label for="mienbac">
-                    <p>Khu vực:</p>
-                    <p>Miền Bắc</p>
-                </label>
-                    <input type="radio" id="miennam_trung" value="Miền Nam - Miền Trung">
-                    <label for="miennam_trung">
-                    <p>Khu vực:</p>
-                    <p>Miền Nam - Miền Bắc</p>
-                </label>
-                    <div class="address-info">
-                        <ul>
-                            <li>
-                                <p><i class="fas fa-map-marker-alt"></i>379 Hoàng Văn Thụ, P2, Q.Tân Bình, HCM:</p>
-                            </li>
-                            <li>
-                                <p><i class="fas fa-map-marker-alt"></i>290 Hoàng Văn Thụ, P4, Q.Tân Bình, HCM:</p>
-                            </li>
-                            <li>
-                                <p><i class="fas fa-map-marker-alt"></i>499 Nguyễn Thị Thập, Q.7, HCM:</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
             <div class="footer-col">
                 <h3>PHƯƠNG THỨC THANH TOÁN</h3>
                 <div class="international-cart">
@@ -408,80 +367,6 @@
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js">
     </script>
     <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
-    <script>
-        //<![CDATA[
-        if (address_2 = localStorage.getItem('address_2_saved')) {
-            $('select[name="calc_shipping_district"] option').each(function() {
-                if ($(this).text() == address_2) {
-                    $(this).attr('selected', '')
-                }
-            })
-            $('input.billing_address_2').attr('value', address_2)
-        }
-        $('select[name="calc_shipping_provinces"]').each(function() {
-                var $this = $(this),
-                    stc = ''
-                c.forEach(function(i, e) {
-                    e += +1
-                    stc += '<option value=' + e + '>' + i + '</option>'
-                    $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
-                    if (address_1 = localStorage.getItem('address_1_saved')) {
-                        $('select[name="calc_shipping_provinces"] option').each(function() {
-                            if ($(this).text() == address_1) {
-                                $(this).attr('selected', '')
-                            }
-                        })
-                        $('input.billing_address_1').attr('value', address_1)
-                    }
-                    $this.on('change', function(i) {
-                        i = $this.children('option:selected').index() - 1
-                        var str = '',
-                            r = $this.val()
-                        if (r != '') {
-                            arr[i].forEach(function(el) {
-                                str += '<option value="' + el + '">' + el + '</option>'
-                                $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
-                            })
-                            var address_1 = $this.children('option:selected').text()
-
-
-
-                            $('select[name="calc_shipping_district"]').on('change', function() {
-                                var target = $(this).children('option:selected')
-                                target.attr('selected', '')
-                                $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
-                                var address_2 = target.text()
-                                $('input.billing_address_2').attr('value', address_2)
-
-
-                            })
-                        }
-                    })
-                })
-            })
-            //]]>
-    </script>
-    <script>
-        $(document).ready(function() {
-            const d = new Date();
-            let hour = d.getHours();
-
-            if (hour > 19 || hour < 5) {
-                document.body.classList.toggle("darkmode");
-            }
-            $("#dialog-1").dialog({
-                autoOpen: false,
-            })
-
-            let m = document.querySelectorAll(".ui-icon-closethick")
-            for (let element of m) {
-                element.className = "fa-solid fa-xmark"
-            }
-
-        });
-    </script>
-
-
 </body>
 
 </html>

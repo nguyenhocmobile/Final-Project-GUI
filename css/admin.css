@@ -2,6 +2,61 @@
     --primary-color-red: rgb(221, 0, 0);
 }
 
+.dadTheOrder,
+.dadListAccount {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.HeadTheOrder th {
+    padding: 40px;
+}
+
+.HeadListAccount th {
+    padding: 15px;
+}
+
+.maincontainer {
+    display: flex;
+}
+
+.cartContainer {
+    width: 400px;
+}
+
+.listTheOrder {
+    width: 100%;
+    text-align: center;
+}
+
+.listTheOrder tr td {
+    border: 1px solid black;
+}
+
+.addCart {
+    float: right;
+}
+
+.listaccount td,
+.listprodurt th,
+.listprodurt td {
+    padding: 30px;
+    border: 1px solid black;
+}
+
+.ui-dialog {
+    position: fixed;
+    margin-left: 40%;
+    margin-top: 20%;
+}
+
+.fa-xmark {
+    color: red!important;
+}
+
+
+/*  */
+
 .dadListOrder {
     width: 60%;
 }
@@ -272,7 +327,8 @@
 /* .ui-state-default .ui-icon {
     background: unset;
 } */
-.ui-dialog{
+
+.ui-dialog {
     top: -10%!important;
     left: 0!important;
 }
