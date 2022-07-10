@@ -120,6 +120,26 @@
         </div>
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js">
         </script>
+        <script>
+            $(function() {
+                $("#dialog-1").dialog({
+                    autoOpen: false,
+                });
+                $("#dialog-2").dialog({
+                    autoOpen: false,
+                })
+                $("#dialog-3").dialog({
+                    autoOpen: false,
+                })
+                $("#dialog-4").dialog({
+                    autoOpen: false,
+                })
+                let m = document.querySelectorAll(".ui-icon-closethick")
+                for (let element of m) {
+                    element.className = "fa-solid fa-xmark"
+                }
+            });
+        </script>
         <script src="js/CartAddMin.js">
         </script>
 </body>

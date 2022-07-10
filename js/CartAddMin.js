@@ -1,22 +1,3 @@
-$(function() {
-    $("#dialog-1").dialog({
-        autoOpen: false,
-    });
-    $("#dialog-2").dialog({
-        autoOpen: false,
-    })
-    $("#dialog-3").dialog({
-        autoOpen: false,
-    })
-    $("#dialog-4").dialog({
-        autoOpen: false,
-    })
-    let m = document.querySelectorAll(".ui-icon-closethick")
-    for (let element of m) {
-        element.className = "fa-solid fa-xmark"
-    }
-});
-
 var getlistwaitingcart = localStorage.getItem("waitItem");
 var listwaitingitem;
 
