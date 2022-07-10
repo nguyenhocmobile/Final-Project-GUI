@@ -148,6 +148,12 @@ function filter() {
   setObjectCart();
   addValue();
   subtractValue();
+  swal.fire({
+    icon: 'success',
+    title: 'Lọc thành công',
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
 
 function showbonus() {
