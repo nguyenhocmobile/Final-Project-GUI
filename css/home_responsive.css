@@ -288,10 +288,6 @@
     .content-review {
         height: 150px;
     }
-    .waitCart tbody tr th,
-    .waitCart tbody tr td {
-        padding: 3px !important;
-    }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 360px) {
@@ -565,10 +561,6 @@
     .content-review {
         height: 200px;
     }
-    .waitCart tbody tr th,
-    .waitCart tbody tr td {
-        padding: 3px !important;
-    }
 }
 
 @media only screen and (min-width: 360px) and (max-width: 410px) {
@@ -806,10 +798,6 @@
     }
     .content-review {
         height: 200px;
-    }
-    .waitCart tbody tr th,
-    .waitCart tbody tr td {
-        padding: 3px !important;
     }
 }
 
@@ -1050,10 +1038,6 @@
     .content-review {
         height: 300px;
     }
-    .waitCart tbody tr th,
-    .waitCart tbody tr td {
-        padding: 5px !important;
-    }
 }
 
 @media only screen and (min-width: 560px) and (max-width: 660px) {
@@ -1239,10 +1223,6 @@
     }
     .content-review {
         height: 300px;
-    }
-    .waitCart tbody tr th,
-    .waitCart tbody tr td {
-        padding: 5px !important;
     }
 }
 
