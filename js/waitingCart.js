@@ -81,10 +81,13 @@ function renderWaitCart() {
             return a.name + ` x ` + a.value + `<br>`;
         });
         var color = 'green'
+        var statusInner='Đã xác nhận'
         if (item.status == 'Deny') {
             color = 'red'
+            statusInner='Đã bị từ chối'
         } else if (item.status == 'Waiting') {
             color = 'blue'
+            statusInner='Đang chờ'
         }
         return `<tr> <td>${
       index + 1
@@ -93,7 +96,7 @@ function renderWaitCart() {
     <td>${item.sumTotal} đồng</td>
     <td>${item.address}</td>
     <td>${item.phone}</td> 
-    <td style="color:${color}!important;">${item.status}</td> 
+    <td style="color:${color}!important;">${statusInner}</td> 
     <td><a href="javascript:;" class="fa-solid fa-rectangle-xmark deleteWaitCart"></a></td>
     </tr>`;
     });
@@ -110,6 +113,7 @@ function setUp() {
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
+        cancelButtonText:'Không',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Đồng ý'
     }).then((result) => {
