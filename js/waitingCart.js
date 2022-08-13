@@ -14,6 +14,7 @@ function getwaitingcart() {
 function pushItem() {
     var getusername = document.getElementById("js-Username");
     var tinh = $('select[name="calc_shipping_provinces"]')
+    var listwaitingitem = JSON.parse(localStorage.getItem("waitItem"));
     var quan = $('select[name="calc_shipping_district"]');
     var sdt = document.getElementById('phone').value;
     var arrayClone = valueGetCart.filter(function(item, index) {
@@ -132,7 +133,7 @@ function selectItem() {
     var sdt = document.getElementById('phone').value;
 
 
-    if (tinh.children('option:selected').text() != 'Tỉnh / Thành phố' && quan.children('option:selected').text() != 'Quận / Huyện' && !isNaN(parseInt(sdt))) {
+    if (tinh.children('option:selected').text() != 'Tỉnh / Thành phố' && quan.children('option:selected').text() != 'Quận / Huyện' && !isNaN(sdt) &&sdt.length>=10) {
         pushItem()
         $("#dialog-1").dialog("close");
         Swal.fire(
@@ -152,6 +153,7 @@ function selectItem() {
 }
 function deleteItemWaiCart(){
     let getindex = document.getElementsByClassName("deleteWaitCart")
+    var listwaitingitem = JSON.parse(localStorage.getItem("waitItem"));
     var getusername;
     if (document.getElementById("js-Username")) {
         getusername = document.getElementById("js-Username")

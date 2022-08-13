@@ -1,7 +1,22 @@
 var listproduct;
 var listCart;
 var getlistwaitingcart = localStorage.getItem('waitItem')
+$(document).ready(function() {
+    const d = new Date();
+    let hour = d.getHours();
 
+    if (hour > 19 || hour < 5) {
+        document.body.classList.toggle("darkmode");
+    }
+    $("#dialog-1").dialog({
+        autoOpen: false,
+    })
+
+    let m = document.querySelectorAll(".ui-icon-closethick")
+    for (let element of m) {
+        element.className = "fa-solid fa-xmark"
+    }
+});
 function getproduct() {
     var getlistproduct = localStorage.getItem('item')
     if (getlistproduct) {

@@ -85,14 +85,32 @@ function deleteAccount() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     var userArray = JSON.parse(localStorage.getItem("user"));
+                    var listwaitingitem = JSON.parse(localStorage.getItem("waitItem"));
+                    var valueGetCart = JSON.parse(localStorage.getItem("cart"));
                     var newArray = [];
+                    var newArrayWaitItem = [];
+                    var newArrayCart = [];
                     var us = select[i].id;
                     for (let j of userArray) {
                         if (us !== j.username) {
                             newArray.push(j);
                         }
                     }
+                    for (let j of listwaitingitem) {
+                        if (us !== j.username) {
+                            newArrayWaitItem.push(j);
+                        }
+                    }
+                    for (let j of valueGetCart) {
+                        if (us !== j.username) {
+                            newArrayWaitItem.push(j);
+                        }
+                    }
                     userArray = newArray;
+                    listwaitingitem = newArrayWaitItem;
+                    valueGetCart = newArrayCart;
+                    localStorage.setItem("waitItem", JSON.stringify(listwaitingitem));
+                    localStorage.setItem("cart", JSON.stringify(valueGetCart));
                     localStorage.setItem("user", JSON.stringify(userArray));
                     renderListAccount();
                     deleteAccount();
@@ -169,7 +187,7 @@ function renderProducts() {
       a.src
     }" alt="" srcset=""></th>  <th>${typp}</th> <th>${
       a.price
-    } đồng</th> 
+    }</th> 
     <th><a href="javascript:;" class="settingbutton ${b}">Sửa</a><a href="javascript:;" class="deletebutton ${b}" onclick="deleteProduct(${b})">Xóa</a></th>
     </tr>`;
     });

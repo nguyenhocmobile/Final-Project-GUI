@@ -1138,6 +1138,7 @@ form .btn input[type="submit"] {
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     transition: 0.3s;
     padding: 5px;
+    cursor: pointer;
 }
 
 .searchResult div:hover {
@@ -1798,4 +1799,8 @@ body {
 
 .fa-check::before {
     color: green;
+}
+
+#searchType {
+    text-align: center;
 }
